@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Image } from "@static/images";
+import { Image, PaineTowers } from "@static/images";
 import { Theme } from "@styles/colors";
 import { MediaQuery } from "@styles/mediaQuery";
 

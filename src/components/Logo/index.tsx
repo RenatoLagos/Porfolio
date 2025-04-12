@@ -14,7 +14,7 @@ export const Logo: FC = () => {
     return (
         <S.LogoStyled>
             <a href="/">
-                <span>Sven</span>
+                <span>Renato</span>
             </a>
         </S.LogoStyled>
     );

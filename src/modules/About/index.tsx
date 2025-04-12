@@ -22,53 +22,40 @@ export const About: FC<AboutProps> = ({ hideExp }) => {
                     <S.AboutContentText>
                         <FadeIn>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Quisquam voluptates,
-                                voluptate, doloremque, quas quia quos quidem
-                                exercitationem nemo tempore voluptatum
-                                doloribus? Quisquam voluptates, voluptate,
-                                doloremque, quas quia quos quidem exercitationem
-                                nemo tempore voluptatum doloribus?
+                            I’m a Software Engineer with a passion for building modern, scalable web applications and automating processes across the stack. With hands-on experience in frontend frameworks, backend logic, RPA, and cloud systems, I design solutions that are both efficient and impactful.
                             </p>
 
                             <h3>What I can do?</h3>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Quisquam voluptates,
-                                voluptate, doloremque, quas quia quos quidem
-                                exercitationem nemo.
+                            I thrive on building from scratch, learning new technologies, and turning technical challenges into simple, elegant solutions. Collaboration, curiosity, and quality drive my work every day.
                             </p>
                         </FadeIn>
                         <FadeIn>
                             <S.AboutContentBoxesWrapper>
                                 <TextBox>
-                                    <h4>Web Design</h4>
+                                    <h4>Full-Stack Development</h4>
                                     <p>
-                                        Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit.
+                                    Crafting fast, responsive apps using React, Next.js, TypeScript, and TailwindCSS with clean, maintainable code.
                                     </p>
                                 </TextBox>
                                 <TextBox>
-                                    <h4>Web Development</h4>
+                                    <h4>Automation & RPA</h4>
                                     <p>
-                                        Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit.
-                                    </p>
-                                </TextBox>
-
-                                <TextBox>
-                                    <h4>UI/UX Design</h4>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit.
+                                    Enhancing business efficiency through Python, SQL, and Blue Prism bots integrated with web platforms.
                                     </p>
                                 </TextBox>
 
                                 <TextBox>
-                                    <h4>Graphic Design</h4>
+                                    <h4>Database & Cloud Engineering</h4>
                                     <p>
-                                        Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit.
+                                    Managing PostgreSQL, SQL Server, and leading migrations to AWS to ensure performance and scalability.
+                                    </p>
+                                </TextBox>
+
+                                <TextBox>
+                                    <h4> System Design & Optimization</h4>
+                                    <p>
+                                    Solving complex problems with thoughtful architecture and identifying performance bottlenecks across frontend and backend layers.
                                     </p>
                                 </TextBox>
                             </S.AboutContentBoxesWrapper>

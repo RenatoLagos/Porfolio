@@ -1,51 +1,39 @@
-import { IconLogo1, IconLogo2, IconLogo3, IconLogo4 } from "@static/icons";
+import { IconLogo5, IconLogo6, IconLogo7 } from "@static/icons/index";
 export const LogosSliderData = [
     {
-        logo: IconLogo1,
-        alt: "logo 1",
+        logo: IconLogo5,
+        alt: "logo 5",
     },
     {
-        logo: IconLogo2,
-        alt: "logo 2",
+        logo: IconLogo6,
+        alt: "logo 6",
     },
     {
-        logo: IconLogo3,
-        alt: "logo 3",
+        logo: IconLogo7,
+        alt: "logo 7",
     },
     {
-        logo: IconLogo4,
-        alt: "logo 4",
+        logo: IconLogo5,
+        alt: "logo 5",
     },
     {
-        logo: IconLogo1,
-        alt: "logo 1",
+        logo: IconLogo6,
+        alt: "logo 6",
     },
     {
-        logo: IconLogo2,
-        alt: "logo 2",
+        logo: IconLogo7,
+        alt: "logo 7",
     },
     {
-        logo: IconLogo3,
-        alt: "logo 3",
+        logo: IconLogo5,
+        alt: "logo 5",
     },
     {
-        logo: IconLogo4,
-        alt: "logo 4",
+        logo: IconLogo6,
+        alt: "logo 6",
     },
     {
-        logo: IconLogo1,
-        alt: "logo 1",
-    },
-    {
-        logo: IconLogo2,
-        alt: "logo 2",
-    },
-    {
-        logo: IconLogo3,
-        alt: "logo 3",
-    },
-    {
-        logo: IconLogo4,
-        alt: "logo 4",
+        logo: IconLogo7,
+        alt: "logo 7",
     },
 ];

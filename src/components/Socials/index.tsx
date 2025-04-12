@@ -8,7 +8,7 @@ export const Socials: FC = ({ ...rest }) => {
             <S.SocialsList>
                 <S.SocialsListItem>
                     <S.SocialsLink
-                        href="https://github.com"
+                        href="https://github.com/RenatoLagos"
                         target="_blank"
                         rel="noreferrer"
                     >
@@ -17,7 +17,7 @@ export const Socials: FC = ({ ...rest }) => {
                 </S.SocialsListItem>
                 <S.SocialsListItem>
                     <S.SocialsLink
-                        href="https://linkedin.com"
+                        href="https://www.linkedin.com/in/renato-lagos/"
                         target="_blank"
                         rel="noreferrer"
                     >
@@ -26,7 +26,7 @@ export const Socials: FC = ({ ...rest }) => {
                 </S.SocialsListItem>
                 <S.SocialsListItem>
                     <S.SocialsLink
-                        href="https://facebook.com"
+                        href="https://facebook.com/renato_lagos/"
                         target="_blank"
                         rel="noreferrer"
                     >
@@ -35,7 +35,7 @@ export const Socials: FC = ({ ...rest }) => {
                 </S.SocialsListItem>
                 <S.SocialsListItem>
                     <S.SocialsLink
-                        href="https://twitter.com"
+                        href="https://x.com/RenatoLagos11"
                         target="_blank"
                         rel="noreferrer"
                     >
@@ -44,7 +44,7 @@ export const Socials: FC = ({ ...rest }) => {
                 </S.SocialsListItem>
                 <S.SocialsListItem>
                     <S.SocialsLink
-                        href="https://instagram.com"
+                        href="https://www.instagram.com/renato_lagos/"
                         target="_blank"
                         rel="noreferrer"
                     >

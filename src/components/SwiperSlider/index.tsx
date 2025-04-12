@@ -45,9 +45,9 @@ export const SwiperSlider: FC<SwiperSliderProps> = ({
         <S.SwiperStyled
             // default values for the slider
             modules={modules}
-            slidesPerView={3}
-            speed={4000}
-            spaceBetween={30}
+            slidesPerView={2}
+            speed={9000}
+            spaceBetween={90}
             {...options}
             {...rest}
         >
