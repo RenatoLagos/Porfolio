@@ -54,10 +54,10 @@ export const Icon: FC<IconName> = ({ alt, iconData, ...rest }) => {
     );
 };
 
-import IconLogo1 from "./icon-logo-1.svg";
-import IconLogo2 from "./icon-logo-2.svg";
-import IconLogo3 from "./icon-logo-3.svg";
-import IconLogo4 from "./icon-logo-4.svg";
+
+import IconLogo5 from "./icon-logo-5.svg";
+import IconLogo6 from "./icon-logo-6.svg";
+import IconLogo7 from "./icon-logo-7.svg";
 
 // logos saved as svg export them as components
-export { IconLogo1, IconLogo2, IconLogo3, IconLogo4 };
+export { IconLogo5, IconLogo6, IconLogo7 };

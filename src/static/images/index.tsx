@@ -6,7 +6,8 @@ import Nike from "./nike.webp";
 import Adidas from "./adidas.webp";
 import Puma from "./puma.webp";
 import Puma2 from "./puma-2.webp";
-
+import ProfilePhoto from "./profile-photo.webp";
+import PaineTowers from "./paine-towers.webp";
 export const images = {
     logo: LogoImage,
     preview: Preview,
@@ -15,6 +16,8 @@ export const images = {
     adidas: Adidas,
     puma: Puma,
     puma2: Puma2,
+    profilePhoto: ProfilePhoto,
+    paineTowers: PaineTowers,
 };
 
 type ImageProps = {
@@ -64,4 +67,4 @@ export const Image: FC<ImageProps> = ({
 };
 
 // default export of the images
-export { Preview, Adidas, Nike, Puma, Puma2 };
+export { Preview, PaineTowers, Adidas, Nike, Puma, Puma2 };
