@@ -9,12 +9,6 @@ export const Footer: FC = () => {
                 <Logo />
                 <S.FooterContent>
                     <p>© 2024 All rights reserved</p>
-                    <p>
-                        Designed by:{" "}
-                        <a href="https://codexcode.pl" target="_blank">
-                            codexcode
-                        </a>
-                    </p>
                 </S.FooterContent>
             </S.FooterContainer>
         </S.FooterStyled>

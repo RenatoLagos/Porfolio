@@ -25,7 +25,6 @@ export const TextBotBgText = styled.span`
     top: 0;
     right: 0;
     text-transform: uppercase;
-
     font-size: 90px;
     line-height: 1;
     font-weight: 900;
