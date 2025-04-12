@@ -9,6 +9,7 @@ import { Button } from "@components/Button";
 import { TextBox } from "@components/textBox";
 import axios from "axios";
 import { FadeIn } from "@utils/animations/FadeIn";
+import { ReCAPTCHA } from "react-google-recaptcha";
 
 /**
  * just for example contact form is setup with
@@ -16,6 +17,8 @@ import { FadeIn } from "@utils/animations/FadeIn";
  */
 export const Contact: FC = () => {
     const [emailSent, setEmailSent] = useState(false);
+    const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     /**
      * Zod schema for form validation
@@ -56,22 +59,40 @@ export const Contact: FC = () => {
      * remember to store somewhere else data like api keys  to be more secure
      */
     const formSubmit = contactForm.handleSubmit(async (values) => {
-        axios
-            .post("https://api.emailjs.com/api/v1.0/email/send", {
-                service_id: "service_rf6usgt",
-                template_id: "template_0taei3k",
-                user_id: "Xj3nyz-8v-oG8e-6l",
+        if (!recaptchaValue) {
+            alert("Please complete the reCAPTCHA verification");
+            return;
+        }
+
+        if (isSubmitting) {
+            alert("Please wait before submitting another message");
+            return;
+        }
+
+        try {
+            setIsSubmitting(true);
+            const response = await axios.post("https://api.emailjs.com/api/v1.0/email/send", {
+                service_id: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                template_id: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                user_id: import.meta.env.VITE_EMAILJS_USER_ID,
                 template_params: {
                     name: values.name,
                     email: values.email,
                     message: values.message,
                 },
-            })
-            .then((res) => {
-                if (res.status === 200) {
-                    setEmailSent(true);
-                }
             });
+
+            if (response.status === 200) {
+                setEmailSent(true);
+                // Reset recaptcha after successful submission
+                setRecaptchaValue(null);
+            }
+        } catch (error) {
+            console.error("Error sending email:", error);
+            alert("There was an error sending your message. Please try again later.");
+        } finally {
+            setIsSubmitting(false);
+        }
     });
 
     return (
@@ -112,8 +133,15 @@ export const Contact: FC = () => {
                                         ?.message
                                 }
                             />
-                            <Button asButton={true} type="submit">
-                                Submit
+                            <ReCAPTCHA
+                                sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                                onChange={setRecaptchaValue}
+                            />
+                            <Button 
+                                asButton={true} 
+                                type="submit"
+                            >
+                                {isSubmitting ? "Sending..." : "Submit"}
                             </Button>
                         </FormStyled>
                     </FadeIn>

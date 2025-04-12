@@ -68,15 +68,22 @@ export const About: FC<AboutProps> = ({ hideExp }) => {
                                         variant="background-text"
                                         bgText="senior"
                                     >
-                                        <h4>React</h4>
-                                        <p>3,5 years</p>
+                                        <h4>Python</h4>
+                                        <p>3 years</p>
                                     </TextBox>
                                     <TextBox
                                         variant="background-text"
                                         bgText="mid"
                                     >
-                                        <h4>JavaScript</h4>
+                                        <h4>React</h4>
                                         <p>2 years</p>
+                                    </TextBox>
+                                    <TextBox
+                                        variant="background-text"
+                                        bgText="mid"
+                                    >
+                                        <h4>TypeScript</h4>
+                                        <p>2 year</p>
                                     </TextBox>
                                     <TextBox
                                         variant="background-text"
@@ -85,15 +92,8 @@ export const About: FC<AboutProps> = ({ hideExp }) => {
                                         <h4>Next.js</h4>
                                         <p>1 year</p>
                                     </TextBox>
-                                    <TextBox
-                                        variant="background-text"
-                                        bgText="new"
-                                    >
-                                        <h4>Figma</h4>
-                                        <p>few months</p>
-                                    </TextBox>
                                 </S.AboutContentBoxesWrapper>
-                                <Button link="/about">view projects</Button>
+                                <Button link="/about">view more</Button>
                             </FadeIn>
                         )}
                     </S.AboutContentText>
