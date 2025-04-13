@@ -56,10 +56,6 @@ export const Projects: FC<ProjectsProps> = ({ data }) => {
                 <S.ProjectHeading>
                     <FadeIn>
                         <h2>Projects</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Quisquam voluptates, voluptate.
-                        </p>
                     </FadeIn>
                 </S.ProjectHeading>
 
