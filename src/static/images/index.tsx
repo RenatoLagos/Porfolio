@@ -5,7 +5,7 @@ import ProfilePhoto2 from "./profile-photo-2.webp";
 import PaineTowers from "./paine-towers.webp";
 import ProactiveMonitoring from "./proactive-monitoring.webp";
 import CodeBridge from "./code-bridge-2.webp";
-import LinguaConnect from "./Lingua-connect.webp";
+import LinguaConnect from "./lingua-connect.webp";
 
 export const images: Record<string, string | ImageMetadata> = {
     profilePhoto: ProfilePhoto,
