@@ -1,6 +1,25 @@
-import { CodeBridge, ProactiveMonitoring } from "@static/images";
+import { CodeBridge, ProactiveMonitoring, LinguaConnect } from "@static/images";
 
-export const HomepageData = [
+type ProjectData = {
+    title: string;
+    image: {
+        src: string;
+        width: number;
+        height: number;
+        alt: string;
+    };
+    links: {
+        title: string;
+        link: string;
+    }[];
+    extraInfo: {
+        title: string;
+        description: string;
+    }[];
+    content: string;
+};
+
+export const HomepageData: ProjectData[] = [
     {
         title: "Proactive Monitoring",
         image: {
@@ -61,23 +80,61 @@ export const HomepageData = [
         extraInfo: [
             {
                 title: "Stack",
-                description: "Astro, Tailwind CSS, TypeScript, Vite, EmailJS",
+                description: "Next.js, React, Typescript, Tailwind CSS",
             },
             {
                 title: "Data",
-                description: "2025-04-11",
+                description: "2025-02-28",
             },
             {
                 title: "Client",
-                description: "Own Project",
+                description: "Personal Project",
             },
         ],
         content: `
-            <h3>Landing Page - CodeBridge</h3>
+            <h3>CodeBridge</h3>
             <p>
-                Many companies rely on low-code platforms like Blue Prism and UiPath to automate their operations. While powerful, these tools can become limiting when scalability, performance, or integration with modern stacks is required. CodeBridge solves this by transforming existing low-code workflows into readable, maintainable code.
+                A landing page for a code review service designed to help developers improve their code quality and learn from experienced developers.
             </p>
         `,
     },
-        
+    {
+        title: "LinguaConnect",
+        image: {
+            src: LinguaConnect.src,
+            width: LinguaConnect.width,
+            height: LinguaConnect.height,
+            alt: "Project LinguaConnect",
+        },
+        links: [
+            {
+                title: "Live Preview",
+                link: "https://github.com/RenatoLagos/LinguaConnect",
+            },
+            {
+                title: "Source Code",
+                link: "https://github.com/RenatoLagos/LinguaConnect",
+            },
+        ],
+        extraInfo: [
+            {
+                title: "Stack",
+                description: "Next.js, React, Typescript, Tailwind CSS, Node.js, Express, PostgreSQL, Sequelize",
+            },
+            {
+                title: "Data",
+                description: "2025-02-28",
+            },
+            {
+                title: "Client",
+                description: "Personal Project",
+            },
+        ],
+        content: `
+            <h3>LinguaConnect</h3>
+            <p>
+                A language learning platform designed to connect language learners with native speakers for practice and cultural exchange.
+            </p>
+        `,
+    },
 ];

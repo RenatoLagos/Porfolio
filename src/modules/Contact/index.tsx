@@ -31,7 +31,7 @@ export const Contact: FC = () => {
                             variant="background-text"
                             bgText="Email"
                             boxAsLink={true}
-                            href="mailto:sven@gmail.com"
+                            href="mailto:renato.lagos.a@gmail.com"
                             target="_blank"
                         >
                             <h3>renato.lagos.a@gmail.com</h3>
