@@ -100,8 +100,8 @@ export const About: FC<AboutProps> = ({ hideExp }) => {
                     <S.AboutContentImage>
                         <FadeIn delay={0.3}>
                             <Image
-                                srcLocal="svenImg"
-                                alt="sven doe"
+                                srcLocal="profilePhoto"
+                                alt="About me"
                                 width={500}
                                 height={500}
                             />

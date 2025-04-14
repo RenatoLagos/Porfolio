@@ -1,310 +1,83 @@
-import { Nike, Adidas, Puma } from "@static/images";
+import { CodeBridge, ProactiveMonitoring } from "@static/images";
 
 export const HomepageData = [
     {
-        title: "Project nike",
+        title: "Proactive Monitoring",
         image: {
-            src: Nike.src,
-            width: Nike.width,
-            height: Nike.height,
-            alt: "Project nike",
+            src: ProactiveMonitoring.src,
+            width: ProactiveMonitoring.width,
+            height: ProactiveMonitoring.height,
+            alt: "Project Proactive Monitoring",
         },
         links: [
             {
                 title: "Live Preview",
-                link: "https://www.nike.com",
+                link: "https://github.com/RenatoLagos/Proactive-monitoring",
             },
             {
                 title: "Source Code",
-                link: "https://github.com",
+                link: "https://github.com/RenatoLagos/Proactive-monitoring",
             },
         ],
         extraInfo: [
             {
                 title: "Stack",
-                description: "React, TypeScript, Styled Components, Strapi",
+                description: "Next.js, React, Typescript, Tailwind CSS, Node.js, Express, PostgreSQL, Sequelize, Supabase",
             },
             {
                 title: "Data",
-                description: "2024-01-01",
+                description: "2025-02-28",
             },
             {
                 title: "Client",
-                description: "Nike",
+                description: "Itaú Bank - RPA Operations",
             },
         ],
         content: `
-            <h3>Nike Landing Page</h3>
+            <h3>Proactive Monitoring</h3>
             <p>
-                Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Quisquam voluptates,
-                voluptate. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Quisquam
-                voluptates, voluptate. Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Quisquam
-                voluptates, voluptate. Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Quisquam
-                voluptates, voluptate.
-                <br /> <br />
-                Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Quisquam voluptates,
-                voluptate.
+                A proactive monitoring system for RPA processes designed to provide real-time visibility into robot execution, analyze performance, generate automatic alerts, and improve operational traceability across automation workflows.
             </p>
         `,
     },
     {
-        title: "Project adidas",
+        title: "Landing Page - CodeBridge",
         image: {
-            src: Adidas.src,
-            width: Adidas.width,
-            height: Adidas.height,
-            alt: "Project adidas",
+            src: CodeBridge.src,
+            width: CodeBridge.width,
+            height: CodeBridge.height,
+            alt: "Project CodeBridge",
         },
         links: [
             {
                 title: "Live Preview",
-                link: "https://www.adidas.com",
+                link: "https://github.com/RenatoLagos/CodeBridge",
             },
             {
                 title: "Source Code",
-                link: "https://github.com",
+                link: "https://github.com/RenatoLagos/CodeBridge",
             },
         ],
         extraInfo: [
             {
                 title: "Stack",
-                description: "React, TypeScript, Styled Components, Strapi",
+                description: "Astro, Tailwind CSS, TypeScript, Vite, EmailJS",
             },
             {
                 title: "Data",
-                description: "2024-01-01",
+                description: "2025-04-11",
             },
             {
                 title: "Client",
-                description: "Adidas",
+                description: "Own Project",
             },
         ],
         content: `
-            <h3>Adidas Landing Page</h3>
+            <h3>Landing Page - CodeBridge</h3>
             <p>
-                Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Quisquam voluptates,
-                voluptate. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Quisquam
-                voluptates, voluptate. Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Quisquam
-                voluptates, voluptate. Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Quisquam
-                voluptates, voluptate.
-                <br /> <br />
-                Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Quisquam voluptates,
-                voluptate.
+                Many companies rely on low-code platforms like Blue Prism and UiPath to automate their operations. While powerful, these tools can become limiting when scalability, performance, or integration with modern stacks is required. CodeBridge solves this by transforming existing low-code workflows into readable, maintainable code.
             </p>
         `,
     },
-    {
-        title: "Project puma",
-        image: {
-            src: Puma.src,
-            width: Puma.width,
-            height: Puma.height,
-            alt: "Project Puma",
-        },
-        links: [
-            {
-                title: "Live Preview",
-                link: "https://www.puma.com",
-            },
-            {
-                title: "Source Code",
-                link: "https://github.com",
-            },
-        ],
-        extraInfo: [
-            {
-                title: "Stack",
-                description: "React, TypeScript, Styled Components, Strapi",
-            },
-            {
-                title: "Data",
-                description: "2024-01-01",
-            },
-            {
-                title: "Client",
-                description: "Puma",
-            },
-        ],
-        content: `
-            <h3>Puma Landing Page</h3>
-            <p>
-                Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Quisquam voluptates,
-                voluptate. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Quisquam
-                voluptates, voluptate. Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Quisquam
-                voluptates, voluptate. Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Quisquam
-                voluptates, voluptate.
-                <br /> <br />
-                Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Quisquam voluptates,
-                voluptate.
-            </p>
-        `,
-    },
-    {
-        title: "Project Puma",
-        image: {
-            src: Puma.src,
-            width: Puma.width,
-            height: Puma.height,
-            alt: "Project Puma",
-        },
-        links: [
-            {
-                title: "Live Preview",
-                link: "https://www.puma.com",
-            },
-            {
-                title: "Source Code",
-                link: "https://github.com",
-            },
-        ],
-        extraInfo: [
-            {
-                title: "Stack",
-                description: "React, TypeScript, Styled Components, Strapi",
-            },
-            {
-                title: "Data",
-                description: "2024-01-01",
-            },
-            {
-                title: "Client",
-                description: "Puma",
-            },
-        ],
-        content: `
-            <h3>Puma Landing Page</h3>
-            <p>
-                Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Quisquam voluptates,
-                voluptate. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Quisquam
-                voluptates, voluptate. Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Quisquam
-                voluptates, voluptate. Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Quisquam
-                voluptates, voluptate.
-                <br /> <br />
-                Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Quisquam voluptates,
-                voluptate.
-            </p>
-        `,
-    },
-    {
-        title: "Project nike",
-        image: {
-            src: Nike.src,
-            width: Nike.width,
-            height: Nike.height,
-            alt: "Project nike",
-        },
-        links: [
-            {
-                title: "Live Preview",
-                link: "https://www.nike.com",
-            },
-            {
-                title: "Source Code",
-                link: "https://github.com",
-            },
-        ],
-        extraInfo: [
-            {
-                title: "Stack",
-                description: "React, TypeScript, Styled Components, Strapi",
-            },
-            {
-                title: "Data",
-                description: "2024-01-01",
-            },
-            {
-                title: "Client",
-                description: "Nike",
-            },
-        ],
-        content: `
-            <h3>Nike Landing Page</h3>
-            <p>
-                Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Quisquam voluptates,
-                voluptate. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Quisquam
-                voluptates, voluptate. Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Quisquam
-                voluptates, voluptate. Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Quisquam
-                voluptates, voluptate.
-                <br /> <br />
-                Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Quisquam voluptates,
-                voluptate.
-            </p>
-        `,
-    },
-    {
-        title: "Project adidas",
-        image: {
-            src: Adidas.src,
-            width: Adidas.width,
-            height: Adidas.height,
-            alt: "Project adidas",
-        },
-        links: [
-            {
-                title: "Live Preview",
-                link: "https://www.adidas.com",
-            },
-            {
-                title: "Source Code",
-                link: "https://github.com",
-            },
-        ],
-        extraInfo: [
-            {
-                title: "Stack",
-                description: "React, TypeScript, Styled Components, Strapi",
-            },
-            {
-                title: "Data",
-                description: "2024-01-01",
-            },
-            {
-                title: "Client",
-                description: "Adidas",
-            },
-        ],
-        content: `
-            <h3>Adidas Landing Page</h3>
-            <p>
-                Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Quisquam voluptates,
-                voluptate. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Quisquam
-                voluptates, voluptate. Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Quisquam
-                voluptates, voluptate. Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Quisquam
-                voluptates, voluptate.
-                <br /> <br />
-                Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Quisquam voluptates,
-                voluptate.
-            </p>
-        `,
-    },
+        
 ];

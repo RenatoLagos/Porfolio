@@ -58,15 +58,7 @@ export const Projects: FC<ProjectsProps> = ({ data }) => {
                         <h2>Projects</h2>
                     </FadeIn>
                 </S.ProjectHeading>
-
-                <S.ProjectsContent>{slides}</S.ProjectsContent>
-                {data.length <= 6 && (
-                    <FadeIn>
-                        <S.ProjectButton link="/projects" align="center">
-                            View More
-                        </S.ProjectButton>
-                    </FadeIn>
-                )}
+                    <S.ProjectsContent>{slides}</S.ProjectsContent>
             </Container>
         </S.ProjectsStyled>
     );

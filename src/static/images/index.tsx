@@ -1,25 +1,15 @@
 import { type FC } from "react";
-import LogoImage from "./logo.webp";
-import Preview from "./preview.webp";
-import SvenImg from "./sven-img.webp";
-import Nike from "./nike.webp";
-import Adidas from "./adidas.webp";
-import Puma from "./puma.webp";
-import Puma2 from "./puma-2.webp";
+import type { ImageMetadata } from "astro";
 import ProfilePhoto from "./profile-photo.webp";
 import PaineTowers from "./paine-towers.webp";
 import ProactiveMonitoring from "./proactive-monitoring.webp";
-export const images = {
-    logo: LogoImage,
-    preview: Preview,
-    svenImg: SvenImg,
-    nike: Nike,
-    adidas: Adidas,
-    puma: Puma,
-    puma2: Puma2,
+import CodeBridge from "./code-bridge-2.webp";
+
+export const images: Record<string, string | ImageMetadata> = {
     profilePhoto: ProfilePhoto,
     paineTowers: PaineTowers,
     proactiveMonitoring: ProactiveMonitoring,
+    codeBridge: CodeBridge,
 };
 
 type ImageProps = {
@@ -41,7 +31,7 @@ export const Image: FC<ImageProps> = ({
     height,
     width,
     src,
-    loading,
+    loading = "lazy",
     ...rest
 }) => {
     /**
@@ -54,14 +44,18 @@ export const Image: FC<ImageProps> = ({
     /**
      * this component should be able to use local images or images from external sources
      */
-    const image = srcLocal ? images[srcLocal] : { src, width, height };
+    const imageSrc = srcLocal 
+        ? typeof images[srcLocal] === 'string' 
+            ? images[srcLocal] 
+            : (images[srcLocal] as ImageMetadata)?.src ?? ''
+        : src;
 
     return (
         <img
-            src={image.src}
+            src={imageSrc}
             alt={alt}
-            width={width ? width : image.width}
-            height={height ? height : image.height}
+            width={width}
+            height={height}
             loading={loading}
             {...rest}
         />
@@ -69,4 +63,4 @@ export const Image: FC<ImageProps> = ({
 };
 
 // default export of the images
-export { Preview, PaineTowers, Adidas, Nike, Puma, Puma2, ProactiveMonitoring };
+export { PaineTowers, ProactiveMonitoring, CodeBridge, ProfilePhoto };
