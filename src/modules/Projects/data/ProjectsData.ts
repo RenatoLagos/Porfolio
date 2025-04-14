@@ -1,54 +1,42 @@
-import { Nike, Adidas, Puma } from "@static/images";
+import { Nike, Adidas, Puma, ProactiveMonitoring } from "@static/images";
 
 export const ProjectsData = [
     {
-        title: "Project nike",
+        title: "Proactive Monitoring",
         image: {
-            src: Nike.src,
-            width: Nike.width,
-            height: Nike.height,
-            alt: "Project nike",
+            src: ProactiveMonitoring.src,
+            width: ProactiveMonitoring.width,
+            height: ProactiveMonitoring.height,
+            alt: "Project Proactive Monitoring",
         },
         links: [
             {
                 title: "Live Preview",
-                link: "https://www.nike.com",
+                link: "https://github.com/RenatoLagos/Proactive-monitoring",
             },
             {
                 title: "Source Code",
-                link: "https://github.com",
+                link: "https://github.com/RenatoLagos/Proactive-monitoring",
             },
         ],
         extraInfo: [
             {
                 title: "Stack",
-                description: "React, TypeScript, Styled Components, Strapi",
+                description: "Next.js, React, Typescript, Tailwind CSS, Node.js, Express, PostgreSQL, Sequelize, Supabase",
             },
             {
                 title: "Data",
-                description: "2024-01-01",
+                description: "2025-03-28",
             },
             {
                 title: "Client",
-                description: "Nike",
+                description: "Itaú Bank - RPA Operations",
             },
         ],
         content: `
-            <h3>Nike Landing Page</h3>
+            <h3>Proactive Monitoring</h3>
             <p>
-                Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Quisquam voluptates,
-                voluptate. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Quisquam
-                voluptates, voluptate. Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Quisquam
-                voluptates, voluptate. Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Quisquam
-                voluptates, voluptate.
-                <br /> <br />
-                Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Quisquam voluptates,
-                voluptate.
+                A proactive monitoring system for RPA processes designed to provide real-time visibility into robot execution, analyze performance, generate automatic alerts, and improve operational traceability across automation workflows.
             </p>
         `,
     },
