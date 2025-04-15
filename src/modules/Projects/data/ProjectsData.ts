@@ -1,6 +1,45 @@
-import { ProactiveMonitoring, CodeBridge } from "@static/images";
+import { ProactiveMonitoring, CodeBridge, Portfolio, LinguaConnect } from "@static/images";
 
 export const ProjectsData = [
+    {
+        title: "Portfolio",
+        image: {
+            src: Portfolio.src,
+            width: Portfolio.width,
+            height: Portfolio.height,
+            alt: "Project Portfolio",
+        },
+        links: [
+            {
+                title: "Live Preview",
+                link: "https://porfolio-renatolagos-projects.vercel.app/",
+            },
+            {
+                title: "Source Code",
+                link: "https://github.com/RenatoLagos/Porfolio",
+            },
+        ],
+        extraInfo: [
+            {
+                title: "Stack",
+                description: "Astro, React, TypeScript, Emotion (React/Styled), GSAP, AOS, React Hook Form, Zod, Swiper, React Device Detect, Sitemap, Vite Plugin Compression",
+            },
+            {
+                title: "Data",
+                description: "2025-04-10",
+            },
+            {
+                title: "Client",
+                description: "Own Project",
+            },
+        ],
+        content: `
+            <h3>Portfolio</h3>
+            <p>
+                My portfolio website.
+            </p>
+        `,
+    },
     {
         title: "Proactive Monitoring",
         image: {
@@ -26,7 +65,7 @@ export const ProjectsData = [
             },
             {
                 title: "Data",
-                description: "2025-03-28",
+                description: "2025-02-28",
             },
             {
                 title: "Client",
@@ -61,34 +100,56 @@ export const ProjectsData = [
         extraInfo: [
             {
                 title: "Stack",
-                description: "React, TypeScript, Styled Components, Strapi",
+                description: "Astro, Tailwind CSS, TypeScript, Vite, EmailJS",
             },
             {
                 title: "Data",
-                description: "2024-01-01",
+                description: "Work in Progress",
             },
             {
                 title: "Client",
-                description: "Adidas",
+                description: "Own Project",
             },
         ],
         content: `
-            <h3>Adidas Landing Page</h3>
+            <h3>Landing Page - CodeBridge</h3>
             <p>
-                Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Quisquam voluptates,
-                voluptate. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Quisquam
-                voluptates, voluptate. Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Quisquam
-                voluptates, voluptate. Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Quisquam
-                voluptates, voluptate.
-                <br /> <br />
-                Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Quisquam voluptates,
-                voluptate.
+                Many companies rely on low-code platforms like Blue Prism and UiPath to automate their operations. While powerful, these tools can become limiting when scalability, performance, or integration with modern stacks is required. CodeBridge solves this by transforming existing low-code workflows into readable, maintainable code.
             </p>
+        `,
+    },
+    {
+        title: "Landing Page - Lingua Connect",
+        image: {
+            src: LinguaConnect.src,
+            width: LinguaConnect.width,
+            height: LinguaConnect.height,
+            alt: "Project Lingua Connect",
+        },
+        links: [
+            {
+                title: "Work in Progress",
+                link: "https://github.com/RenatoLagos/",
+            },
+        ],
+        extraInfo: [
+            {
+                title: "Stack",
+                description: "Astro, Tailwind CSS, TypeScript, Vite, EmailJS",
+            },
+            {
+                title: "Data",
+                description: "Work in Progress",
+            },
+            {
+                title: "Client",
+                description: "Freelance Project",
+            },
+        ],
+        content: `
+            <h3>Landing Page - Lingua Connect</h3>
+            <p>
+                This website offers personalized online English and Spanish classes with native-level instructors. Lessons are customized to fit your goals, schedule, and learning style, and are suitable for all ages and proficiency levels.
         `,
     },
 ];

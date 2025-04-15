@@ -1,6 +1,45 @@
-import { CodeBridge, ProactiveMonitoring, LinguaConnect } from "@static/images";
+import { CodeBridge, ProactiveMonitoring, LinguaConnect, Portfolio } from "@static/images";
 
 export const HomepageData = [
+    {
+        title: "Portfolio",
+        image: {
+            src: Portfolio.src,
+            width: Portfolio.width,
+            height: Portfolio.height,
+            alt: "Project Portfolio",
+        },
+        links: [
+            {
+                title: "Live Preview",
+                link: "https://porfolio-renatolagos-projects.vercel.app/",
+            },
+            {
+                title: "Source Code",
+                link: "https://github.com/RenatoLagos/Porfolio",
+            },
+        ],
+        extraInfo: [
+            {
+                title: "Stack",
+                description: "Astro, React, TypeScript, Emotion (React/Styled), GSAP, AOS, React Hook Form, Zod, Swiper, React Device Detect, Sitemap, Vite Plugin Compression",
+            },
+            {
+                title: "Data",
+                description: "2025-04-10",
+            },
+            {
+                title: "Client",
+                description: "Own Project",
+            },
+        ],
+        content: `
+            <h3>Portfolio</h3>
+            <p>
+                My portfolio website.
+            </p>
+        `,
+    },
     {
         title: "Proactive Monitoring",
         image: {

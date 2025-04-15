@@ -6,6 +6,7 @@ import PaineTowers from "./paine-towers.webp";
 import ProactiveMonitoring from "./proactive-monitoring.webp";
 import CodeBridge from "./code-bridge-2.webp";
 import LinguaConnect from "./Lingua-connect.webp";
+import Portfolio from "./portfolio.webp";
 
 export const images: Record<string, string | ImageMetadata> = {
     profilePhoto: ProfilePhoto,
@@ -14,6 +15,7 @@ export const images: Record<string, string | ImageMetadata> = {
     proactiveMonitoring: ProactiveMonitoring,
     codeBridge: CodeBridge,
     linguaConnect: LinguaConnect,
+    portfolio: Portfolio,
 };
 
 type ImageProps = {
@@ -67,4 +69,4 @@ export const Image: FC<ImageProps> = ({
 };
 
 // default export of the images
-export { PaineTowers, ProactiveMonitoring, CodeBridge, ProfilePhoto, ProfilePhoto2, LinguaConnect };
+export { PaineTowers, ProactiveMonitoring, CodeBridge, ProfilePhoto, ProfilePhoto2, LinguaConnect, Portfolio };
