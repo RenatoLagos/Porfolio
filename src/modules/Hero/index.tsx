@@ -3,12 +3,15 @@ import * as S from "./styled";
 import { Button } from "@components/Button";
 import { Container } from "@components/Container";
 import { Socials } from "@components/Socials";
+import { PaineTowers } from "@static/images";
 
 import Resume from "@static/Renato Agustin Lagos Albornoz - Resume.docx.pdf";
 import { FadeIn } from "@utils/animations/FadeIn";
+
 export const Hero: FC = () => {
     return (
         <S.HeroWrapper>
+            <S.BackgroundImage src={PaineTowers.src} alt="Background" />
             <Container>
                 <S.HeroContent>
                     <FadeIn>
@@ -32,7 +35,7 @@ export const Hero: FC = () => {
                         <Socials />
                     </FadeIn>
                     <FadeIn delay={0.4}>
-                        <Button link={Resume} target="_blank">
+                        <Button link={Resume} target="_blank" align="center">
                             Open Cv
                         </Button>
                     </FadeIn>

@@ -18,18 +18,18 @@ export const ButtonLink = styled.a`
     text-align: center;
     padding: 12px 40px;
     min-width: 150px;
-    border: 1.5px solid ${Theme.secondary};
+    border: 1.5px solid white !important;
     font-size: 16px;
     line-height: 20px;
     letter-spacing: 1px;
     font-weight: 500;
     border-radius: 50px;
     background: transparent;
-    color: ${Theme.secondary};
+    color: white !important;
 
     &:hover {
-        background-color: ${Theme.secondary};
-        color: ${Theme.bgElement};
+        background-color: white !important;
+        color: ${Theme.bgElement} !important;
     }
 `;
 

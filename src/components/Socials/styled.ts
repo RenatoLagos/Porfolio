@@ -6,8 +6,12 @@ export const SocialsStyled = styled.div`
     justify-content: center;
     align-items: center;
     gap: 20px;
-
     margin: 20px 0 0;
+
+    svg {
+        fill: white !important;
+        color: white !important;
+    }
 `;
 
 export const SocialsList = styled.ul`
@@ -25,10 +29,9 @@ export const SocialsListItem = styled.li`
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-
     cursor: pointer;
     transition: 0.3s;
-    opacity: 0.5;
+    opacity: 0.8;
 
     &:hover {
         opacity: 1;
@@ -40,7 +43,7 @@ export const SocialsListItem = styled.li`
             display: block;
             width: 1px;
             height: 20px;
-            background-color: ${Theme.textSecondary};
+            background-color: white !important;
             margin-left: 10px;
         }
     }
@@ -48,7 +51,7 @@ export const SocialsListItem = styled.li`
 
 export const SocialsLink = styled.a`
     text-decoration: none;
-    color: inherit;
+    color: white !important;
 
     img {
         width: 20px;
