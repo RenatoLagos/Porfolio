@@ -11,6 +11,10 @@ export const SocialsStyled = styled.div`
     svg {
         fill: white !important;
         color: white !important;
+        path {
+            fill: white !important;
+            stroke: white !important;
+        }
     }
 `;
 
@@ -58,5 +62,6 @@ export const SocialsLink = styled.a`
         height: 20px;
         aspect-ratio: 20/20;
         object-fit: contain;
+        filter: brightness(0) invert(1) !important;
     }
 `;
