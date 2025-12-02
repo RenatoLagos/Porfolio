@@ -5,7 +5,7 @@ import { Container } from "@components/Container";
 import { Socials } from "@components/Socials";
 import { PaineTowers } from "@static/images";
 
-import Resume from "@static/Renato Agustin Lagos Albornoz - Resume.pdf";
+import Resume from "@static/CV_Renato_Lagos_Professional_Design.pdf";
 import { FadeIn } from "@utils/animations/FadeIn";
 
 export const Hero: FC = () => {
