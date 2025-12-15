@@ -69,28 +69,42 @@ export const About: FC<AboutProps> = ({ hideExp }) => {
                                         bgText="senior"
                                     >
                                         <h4>Python</h4>
+                                        <p>4 years</p>
+                                    </TextBox>
+                                    <TextBox
+                                        variant="background-text"
+                                        bgText="senior"
+                                    >
+                                        <h4>TypeScript</h4>
+                                        <p>3 years</p>
+                                    </TextBox>
+                                    <TextBox
+                                        variant="background-text"
+                                        bgText="senior"
+                                    >
+                                        <h4>React</h4>
+                                        <p>3 years</p>
+                                    </TextBox>
+                                    <TextBox
+                                        variant="background-text"
+                                        bgText="senior"
+                                    >
+                                        <h4>Django</h4>
+                                        <p>3 years</p>
+                                    </TextBox>
+                                    <TextBox
+                                        variant="background-text"
+                                        bgText="senior"
+                                    >
+                                        <h4>Blue Prism</h4>
                                         <p>3 years</p>
                                     </TextBox>
                                     <TextBox
                                         variant="background-text"
                                         bgText="mid"
                                     >
-                                        <h4>React</h4>
-                                        <p>2 years</p>
-                                    </TextBox>
-                                    <TextBox
-                                        variant="background-text"
-                                        bgText="mid"
-                                    >
-                                        <h4>TypeScript</h4>
-                                        <p>2 year</p>
-                                    </TextBox>
-                                    <TextBox
-                                        variant="background-text"
-                                        bgText="junior"
-                                    >
                                         <h4>Next.js</h4>
-                                        <p>1 year</p>
+                                        <p>2 years</p>
                                     </TextBox>
                                 </S.AboutContentBoxesWrapper>
                                 <Button link="/about">view more</Button>

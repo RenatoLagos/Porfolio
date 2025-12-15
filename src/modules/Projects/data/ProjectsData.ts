@@ -1,4 +1,4 @@
-import { ProactiveMonitoring, CodeBridge, Portfolio, LinguaConnect } from "@static/images";
+import { ProactiveMonitoring, Portfolio, FerRealSpanish, ContentAutomation } from "@static/images";
 
 export const ProjectsData = [
     {
@@ -80,31 +80,31 @@ export const ProjectsData = [
         `,
     },
     {
-        title: "Landing Page - CodeBridge",
+        title: "FerRealSpanish",
         image: {
-            src: CodeBridge.src,
-            width: CodeBridge.width,
-            height: CodeBridge.height,
-            alt: "Project CodeBridge",
+            src: FerRealSpanish.src,
+            width: FerRealSpanish.width,
+            height: FerRealSpanish.height,
+            alt: "Project FerRealSpanish",
         },
         links: [
             {
                 title: "Live Preview",
-                link: "https://github.com/RenatoLagos/CodeBridge",
+                link: "https://fer-real-spanish.vercel.app",
             },
             {
                 title: "Source Code",
-                link: "https://github.com/RenatoLagos/CodeBridge",
+                link: "https://github.com/RenatoLagos/FerRealSpanish",
             },
         ],
         extraInfo: [
             {
                 title: "Stack",
-                description: "Astro, Tailwind CSS, TypeScript, Vite, EmailJS",
+                description: "Astro, TypeScript, Tailwind CSS, Vercel",
             },
             {
                 title: "Data",
-                description: "Work in Progress",
+                description: "2025-Present",
             },
             {
                 title: "Client",
@@ -112,44 +112,45 @@ export const ProjectsData = [
             },
         ],
         content: `
-            <h3>Landing Page - CodeBridge</h3>
+            <h3>FerRealSpanish</h3>
             <p>
-                Many companies rely on low-code platforms like Blue Prism and UiPath to automate their operations. While powerful, these tools can become limiting when scalability, performance, or integration with modern stacks is required. CodeBridge solves this by transforming existing low-code workflows into readable, maintainable code.
+                A modern Spanish-learning platform built with Astro and TypeScript. Features a clean, responsive design with Tailwind CSS and deployed on Vercel for optimal performance and global reach.
             </p>
         `,
     },
     {
-        title: "Landing Page - Lingua Connect",
+        title: "Content Automation Stack",
         image: {
-            src: LinguaConnect.src,
-            width: LinguaConnect.width,
-            height: LinguaConnect.height,
-            alt: "Project Lingua Connect",
+            src: ContentAutomation.src,
+            width: ContentAutomation.width,
+            height: ContentAutomation.height,
+            alt: "Project Content Automation Stack",
         },
         links: [
             {
-                title: "Work in Progress",
-                link: "https://github.com/RenatoLagos/",
+                title: "GitHub",
+                link: "https://github.com/RenatoLagos/content-automation",
             },
         ],
         extraInfo: [
             {
                 title: "Stack",
-                description: "Astro, Tailwind CSS, TypeScript, Vite, EmailJS",
+                description: "n8n, AI Agents, APIs, Workflow Orchestration",
             },
             {
                 title: "Data",
-                description: "Work in Progress",
+                description: "2025-Present",
             },
             {
                 title: "Client",
-                description: "Freelance Project",
+                description: "Own Project",
             },
         ],
         content: `
-            <h3>Landing Page - Lingua Connect</h3>
+            <h3>Content Automation Stack</h3>
             <p>
-                This website offers personalized online English and Spanish classes with native-level instructors. Lessons are customized to fit your goals, schedule, and learning style, and are suitable for all ages and proficiency levels.
+                Intelligent social media automation platform using n8n and AI agents for thumbnail generation, content description creation, and multi-platform distribution. Features analytics dashboards and automated video editing pipelines.
+            </p>
         `,
     },
 ];

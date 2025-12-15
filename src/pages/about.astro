@@ -5,6 +5,7 @@ import {
 } from "@modules/About/styled";
 import Layout from "../layouts/Layout.astro";
 import { About as AboutModule } from "@modules/About";
+import { Experience } from "@modules/Experience";
 import { TextBox } from "@components/textBox";
 import { Container } from "@components/Container";
 import { FadeIn } from "@utils/animations/FadeIn";
@@ -16,58 +17,177 @@ import { FadeIn } from "@utils/animations/FadeIn";
 >
     <main class="page-content">
         <AboutModule hideExp={true} client:load />
+        <Experience client:visible />
         <AboutPageStyled>
             <FadeIn client:visible>
                 <Container>
-                    <h2>Programming languages &<br /> tools</h2>
+                    <h2>Technical Skills</h2>
+
+                    <h3>Languages & Core</h3>
+                    <AboutPageStyledBoxesWrapper>
+                        <TextBox variant="background-text" bgText="senior">
+                            <h4>TypeScript</h4>
+                            <p>3 years</p>
+                        </TextBox>
+                        <TextBox variant="background-text" bgText="senior">
+                            <h4>JavaScript</h4>
+                            <p>3 years</p>
+                        </TextBox>
+                        <TextBox variant="background-text" bgText="senior">
+                            <h4>Python</h4>
+                            <p>4 years</p>
+                        </TextBox>
+                        <TextBox variant="background-text" bgText="mid">
+                            <h4>C#</h4>
+                            <p>2 years</p>
+                        </TextBox>
+                        <TextBox variant="background-text" bgText="mid">
+                            <h4>VB / VBA</h4>
+                            <p>2 years</p>
+                        </TextBox>
+                        <TextBox variant="background-text" bgText="junior">
+                            <h4>PowerShell</h4>
+                            <p>1 year</p>
+                        </TextBox>
+                    </AboutPageStyledBoxesWrapper>
+
+                    <h3>Frontend Development</h3>
                     <AboutPageStyledBoxesWrapper>
                         <TextBox variant="background-text" bgText="senior">
                             <h4>React</h4>
                             <p>3 years</p>
                         </TextBox>
                         <TextBox variant="background-text" bgText="mid">
-                            <h4>JavaScript</h4>
+                            <h4>Next.js</h4>
                             <p>2 years</p>
                         </TextBox>
-                        <TextBox variant="background-text" bgText="junior">
-                            <h4>Docker</h4>
-                            <p>1 year</p>
+                        <TextBox variant="background-text" bgText="mid">
+                            <h4>Astro</h4>
+                            <p>2 years</p>
                         </TextBox>
                         <TextBox variant="background-text" bgText="senior">
-                            <h4>Python</h4>
+                            <h4>TailwindCSS</h4>
+                            <p>3 years</p>
+                        </TextBox>
+                    </AboutPageStyledBoxesWrapper>
+
+                    <h3>Backend & APIs</h3>
+                    <AboutPageStyledBoxesWrapper>
+                        <TextBox variant="background-text" bgText="senior">
+                            <h4>Django</h4>
                             <p>3 years</p>
                         </TextBox>
                         <TextBox variant="background-text" bgText="mid">
-                            <h4>TypeScript</h4>
+                            <h4>FastAPI</h4>
                             <p>2 years</p>
                         </TextBox>
                         <TextBox variant="background-text" bgText="mid">
+                            <h4>Node.js</h4>
+                            <p>2 years</p>
+                        </TextBox>
+                        <TextBox variant="background-text" bgText="mid">
+                            <h4>Express</h4>
+                            <p>2 years</p>
+                        </TextBox>
+                        <TextBox variant="background-text" bgText="senior">
+                            <h4>REST APIs</h4>
+                            <p>3 years</p>
+                        </TextBox>
+                        <TextBox variant="background-text" bgText="mid">
+                            <h4>JWT / Auth</h4>
+                            <p>2 years</p>
+                        </TextBox>
+                    </AboutPageStyledBoxesWrapper>
+
+                    <h3>Automation & RPA</h3>
+                    <AboutPageStyledBoxesWrapper>
+                        <TextBox variant="background-text" bgText="senior">
+                            <h4>Blue Prism</h4>
+                            <p>3 years</p>
+                        </TextBox>
+                        <TextBox variant="background-text" bgText="mid">
+                            <h4>Power Automate</h4>
+                            <p>2 years</p>
+                        </TextBox>
+                        <TextBox variant="background-text" bgText="mid">
+                            <h4>n8n</h4>
+                            <p>1 year</p>
+                        </TextBox>
+                        <TextBox variant="background-text" bgText="senior">
+                            <h4>ETL Pipelines</h4>
+                            <p>3 years</p>
+                        </TextBox>
+                    </AboutPageStyledBoxesWrapper>
+
+                    <h3>Databases & Cloud</h3>
+                    <AboutPageStyledBoxesWrapper>
+                        <TextBox variant="background-text" bgText="senior">
                             <h4>PostgreSQL</h4>
+                            <p>3 years</p>
+                        </TextBox>
+                        <TextBox variant="background-text" bgText="mid">
+                            <h4>Supabase</h4>
+                            <p>1 year</p>
+                        </TextBox>
+                        <TextBox variant="background-text" bgText="mid">
+                            <h4>SQL Server</h4>
+                            <p>2 years</p>
+                        </TextBox>
+                        <TextBox variant="background-text" bgText="mid">
+                            <h4>MySQL</h4>
+                            <p>2 years</p>
+                        </TextBox>
+                        <TextBox variant="background-text" bgText="mid">
+                            <h4>AWS</h4>
+                            <p>2 years</p>
+                        </TextBox>
+                        <TextBox variant="background-text" bgText="mid">
+                            <h4>Docker</h4>
+                            <p>2 years</p>
+                        </TextBox>
+                    </AboutPageStyledBoxesWrapper>
+
+                    <h3>AI Tools & DevOps</h3>
+                    <AboutPageStyledBoxesWrapper>
+                        <TextBox variant="background-text" bgText="new">
+                            <h4>Cursor</h4>
+                            <p>6 months</p>
+                        </TextBox>
+                        <TextBox variant="background-text" bgText="new">
+                            <h4>Windsurf</h4>
+                            <p>3 months</p>
+                        </TextBox>
+                        <TextBox variant="background-text" bgText="new">
+                            <h4>Claude Code</h4>
+                            <p>3 months</p>
+                        </TextBox>
+                        <TextBox variant="background-text" bgText="new">
+                            <h4>Gemini CLI</h4>
+                            <p>3 months</p>
+                        </TextBox>
+                        <TextBox variant="background-text" bgText="mid">
+                            <h4>GitHub Actions</h4>
                             <p>2 years</p>
                         </TextBox>
                         <TextBox variant="background-text" bgText="senior">
                             <h4>Git</h4>
-                            <p>3 years</p>
+                            <p>4 years</p>
                         </TextBox>
-                        <TextBox variant="background-text" bgText="new">
-                            <h4>Cursor</h4>
-                            <p>few months</p>
+                    </AboutPageStyledBoxesWrapper>
+
+                    <h2>Languages</h2>
+                    <AboutPageStyledBoxesWrapper>
+                        <TextBox variant="background-text" bgText="Native">
+                            <h4>Spanish</h4>
+                            <p>Native</p>
                         </TextBox>
-                        <TextBox variant="background-text" bgText="junior">
-                            <h4>Node.js</h4>
-                            <p>1 year</p>
+                        <TextBox variant="background-text" bgText="B2">
+                            <h4>English</h4>
+                            <p>Professional Working</p>
                         </TextBox>
-                        <TextBox variant="background-text" bgText="mid">
-                            <h4>Astro.js</h4>
-                            <p>2 years</p>
-                        </TextBox>
-                        <TextBox variant="background-text" bgText="junior">
-                            <h4>Next.js</h4>
-                            <p>1 year</p>
-                        </TextBox>
-                        <TextBox variant="background-text" bgText="new">
-                            <h4>Supabase</h4>
-                            <p>few months</p>
+                        <TextBox variant="background-text" bgText="A1">
+                            <h4>German</h4>
+                            <p>Elementary</p>
                         </TextBox>
                     </AboutPageStyledBoxesWrapper>
                 </Container>

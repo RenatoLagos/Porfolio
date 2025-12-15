@@ -19,12 +19,8 @@ export const ProjectContent = styled.div`
 
 export const ProjectsContent = styled.div`
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-
-    ${MediaQuery.max("lg")} {
-        grid-template-columns: repeat(2, 1fr);
-    }
 
     ${MediaQuery.max("md")} {
         grid-template-columns: 1fr;

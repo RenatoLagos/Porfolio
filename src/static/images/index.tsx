@@ -7,6 +7,8 @@ import ProactiveMonitoring from "./proactive-monitoring.webp";
 import CodeBridge from "./code-bridge-2.webp";
 import LinguaConnect from "./Lingua-connect.webp";
 import Portfolio from "./portfolio.webp";
+import FerRealSpanish from "./fer-real-spanish.webp";
+import ContentAutomation from "./content-automation.webp";
 
 export const images: Record<string, string | ImageMetadata> = {
     profilePhoto: ProfilePhoto,
@@ -16,6 +18,8 @@ export const images: Record<string, string | ImageMetadata> = {
     codeBridge: CodeBridge,
     linguaConnect: LinguaConnect,
     portfolio: Portfolio,
+    ferRealSpanish: FerRealSpanish,
+    contentAutomation: ContentAutomation,
 };
 
 type ImageProps = {
@@ -69,4 +73,4 @@ export const Image: FC<ImageProps> = ({
 };
 
 // default export of the images
-export { PaineTowers, ProactiveMonitoring, CodeBridge, ProfilePhoto, ProfilePhoto2, LinguaConnect, Portfolio };
+export { PaineTowers, ProactiveMonitoring, CodeBridge, ProfilePhoto, ProfilePhoto2, LinguaConnect, Portfolio, FerRealSpanish, ContentAutomation };
