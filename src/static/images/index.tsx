@@ -2,6 +2,7 @@ import { type FC } from "react";
 import type { ImageMetadata } from "astro";
 import ProfilePhoto from "./profile-photo.webp";
 import ProfilePhoto2 from "./profile-photo-2.webp";
+import PhotoProfile2 from "./photo_profile_2.png";
 import PaineTowers from "./paine-towers.webp";
 import ProactiveMonitoring from "./proactive-monitoring.webp";
 import CodeBridge from "./code-bridge-2.webp";
@@ -9,10 +10,12 @@ import LinguaConnect from "./Lingua-connect.webp";
 import Portfolio from "./portfolio.webp";
 import FerRealSpanish from "./fer-real-spanish.webp";
 import ContentAutomation from "./content-automation.webp";
+import Automations from "./Automations.png";
 
 export const images: Record<string, string | ImageMetadata> = {
     profilePhoto: ProfilePhoto,
     profilePhoto2: ProfilePhoto2,
+    photoProfile2: PhotoProfile2,
     paineTowers: PaineTowers,
     proactiveMonitoring: ProactiveMonitoring,
     codeBridge: CodeBridge,
@@ -20,6 +23,7 @@ export const images: Record<string, string | ImageMetadata> = {
     portfolio: Portfolio,
     ferRealSpanish: FerRealSpanish,
     contentAutomation: ContentAutomation,
+    automations: Automations,
 };
 
 type ImageProps = {
@@ -73,4 +77,4 @@ export const Image: FC<ImageProps> = ({
 };
 
 // default export of the images
-export { PaineTowers, ProactiveMonitoring, CodeBridge, ProfilePhoto, ProfilePhoto2, LinguaConnect, Portfolio, FerRealSpanish, ContentAutomation };
+export { PaineTowers, ProactiveMonitoring, CodeBridge, ProfilePhoto, ProfilePhoto2, PhotoProfile2, LinguaConnect, Portfolio, FerRealSpanish, ContentAutomation, Automations };

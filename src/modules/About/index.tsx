@@ -22,12 +22,12 @@ export const About: FC<AboutProps> = ({ hideExp }) => {
                     <S.AboutContentText>
                         <FadeIn>
                             <p>
-                            I’m a Software Engineer with a passion for building modern, scalable web applications and automating processes across the stack. With hands-on experience in frontend frameworks, backend logic, RPA, and cloud systems, I design solutions that are both efficient and impactful.
+                            I'm a Full Stack Engineer based in Berlin, Germany with expertise in TypeScript/React and Python/Django. I specialize in building modern, scalable web applications, real-time monitoring dashboards, and automation systems that deliver measurable business impact.
                             </p>
 
                             <h3>What I can do?</h3>
                             <p>
-                            I thrive on building from scratch, learning new technologies, and turning technical challenges into simple, elegant solutions. Collaboration, curiosity, and quality drive my work every day.
+                            I thrive on building complete solutions from frontend to backend, implementing microservices architectures, and creating data-driven dashboards. I bring strong expertise in cloud infrastructure (AWS, Docker), API design (REST, JWT, OAuth), and workflow orchestration (Apache Airflow).
                             </p>
                         </FadeIn>
                         <FadeIn>
@@ -35,27 +35,27 @@ export const About: FC<AboutProps> = ({ hideExp }) => {
                                 <TextBox>
                                     <h4>Full-Stack Development</h4>
                                     <p>
-                                    Crafting fast, responsive apps using React, Next.js, TypeScript, and TailwindCSS with clean, maintainable code.
+                                    Building production-ready applications with React, Next.js, TypeScript, and TailwindCSS on the frontend, paired with Django REST Framework, FastAPI, and Node.js/Express backends.
                                     </p>
                                 </TextBox>
                                 <TextBox>
-                                    <h4>Automation & RPA</h4>
+                                    <h4>Microservices & APIs</h4>
                                     <p>
-                                    Enhancing business efficiency through Python, SQL, and Blue Prism bots integrated with web platforms.
-                                    </p>
-                                </TextBox>
-
-                                <TextBox>
-                                    <h4>Database & Cloud Engineering</h4>
-                                    <p>
-                                    Managing PostgreSQL, SQL Server, and leading migrations to AWS to ensure performance and scalability.
+                                    Designing and implementing scalable microservices architectures with JWT authentication, rate limiting, and REST API design serving millions of requests.
                                     </p>
                                 </TextBox>
 
                                 <TextBox>
-                                    <h4> System Design & Optimization</h4>
+                                    <h4>Cloud & DevOps</h4>
                                     <p>
-                                    Solving complex problems with thoughtful architecture and identifying performance bottlenecks across frontend and backend layers.
+                                    Deploying containerized applications with Docker, AWS (API Gateway, EC2, ALB), and implementing CI/CD pipelines with GitHub Actions.
+                                    </p>
+                                </TextBox>
+
+                                <TextBox>
+                                    <h4>Data & Orchestration</h4>
+                                    <p>
+                                    Building workflow automation systems with Apache Airflow, managing PostgreSQL/MySQL databases, and creating ETL pipelines with pandas and NumPy.
                                     </p>
                                 </TextBox>
                             </S.AboutContentBoxesWrapper>
@@ -94,16 +94,16 @@ export const About: FC<AboutProps> = ({ hideExp }) => {
                                     </TextBox>
                                     <TextBox
                                         variant="background-text"
-                                        bgText="senior"
+                                        bgText="mid"
                                     >
-                                        <h4>Blue Prism</h4>
-                                        <p>3 years</p>
+                                        <h4>Next.js</h4>
+                                        <p>2 years</p>
                                     </TextBox>
                                     <TextBox
                                         variant="background-text"
                                         bgText="mid"
                                     >
-                                        <h4>Next.js</h4>
+                                        <h4>FastAPI</h4>
                                         <p>2 years</p>
                                     </TextBox>
                                 </S.AboutContentBoxesWrapper>

@@ -5,7 +5,7 @@ import { Container } from "@components/Container";
 import { Socials } from "@components/Socials";
 import { PaineTowers } from "@static/images";
 
-import Resume from "@static/Resume_Renato_Lagos.pdf";
+import Resume from "@static/Lebenslauf_Renato_Lagos_FullStack.pdf";
 import { FadeIn } from "@utils/animations/FadeIn";
 
 export const Hero: FC = () => {
@@ -16,7 +16,7 @@ export const Hero: FC = () => {
                 <S.HeroContent>
                     <FadeIn>
                         <S.HeroImageStyled
-                            srcLocal="profilePhoto"
+                            srcLocal="photoProfile2"
                             alt="hero"
                             width={300}
                             height={300}

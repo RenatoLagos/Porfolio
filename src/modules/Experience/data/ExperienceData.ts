@@ -1,37 +1,23 @@
 export const ExperienceData = [
     {
-        role: "Automation Engineer & Backend Developer",
-        company: "Freelance",
-        period: "2025 – Present",
-        location: "Remote",
-        description: "Building SAP procurement automations using Power Automate, Excel/VBA workflows, and Python backend utilities for API integration and data flow centralization.",
-    },
-    {
         role: "Software Engineer (Full Stack)",
         company: "ITAÚ Bank",
         period: "08/2024 – 04/2025",
         location: "Santiago, Chile",
-        description: "Built monitoring interfaces using React, Next.js, and TypeScript. Developed backend microservices with Django REST Framework and FastAPI. Created real-time dashboards with JWT authentication.",
+        description: "Built 4 real-time monitoring dashboards (React, Next.js, TypeScript, TailwindCSS) serving 120+ operations users, reducing incident response time by 35% through centralized KPI visibility. Developed 5 backend microservices (Django REST Framework, FastAPI, Node.js/Express) handling 2M+ daily requests, implementing JWT authentication and rate limiting for cross-team integrations. Migrated 3 monolithic services to containerized architecture (Docker, AWS API Gateway, ALB), reducing deployment time from 2 hours to 15 minutes.",
     },
     {
         role: "Full Stack Developer",
         company: "KPAZ",
         period: "03/2023 – 07/2024",
         location: "Santiago, Chile",
-        description: "Developed automation dashboards using React, Next.js, and TypeScript. Implemented backend logic with FastAPI and Node.js/Express, providing integration endpoints and REST services.",
+        description: "Built 3 internal dashboards (React, Next.js, TypeScript, TailwindCSS) consolidating data from 8+ REST services, reducing manual reporting time by 60% for 30-person operations team. Implemented webhook-based integration layer (FastAPI, Node.js/Express) connecting 5 internal systems, processing 500K+ events/month with 99.8% uptime. Established testing framework (pytest, Jest) achieving 75% code coverage, reducing production bugs by 40% over 6 months.",
     },
     {
-        role: "RPA Developer",
+        role: "Software Developer",
         company: "EY Chile",
         period: "02/2022 – 03/2023",
         location: "Santiago, Chile",
-        description: "Developed RPA bots with Blue Prism, SQL Server, and C# for high-volume back-office processes. Built internal web tools with HTML/CSS/JavaScript for automation services.",
-    },
-    {
-        role: "RPA & Software Developer",
-        company: "OVO Consulting",
-        period: "2021 – 2022",
-        location: "Santiago, Chile",
-        description: "Built workflow automations using Blue Prism, VBA, and PowerShell. Developed Python scripts and backend services to orchestrate automation runs with status APIs.",
+        description: "Developed automation solutions (C#, SQL Server) and internal web tools (HTML/CSS/JavaScript) for back-office operations at Big 4 consulting firm.",
     },
 ];
