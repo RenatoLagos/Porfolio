@@ -1,6 +1,36 @@
-import { FerRealSpanish, Automations } from "@static/images";
+import { FerRealSpanish, Automations, ProactiveMonitoring } from "@static/images";
 
 export const HomepageData = [
+    {
+        title: "Proactive Monitoring System",
+        image: {
+            src: ProactiveMonitoring.src,
+            width: ProactiveMonitoring.width,
+            height: ProactiveMonitoring.height,
+            alt: "Project Proactive Monitoring System",
+        },
+        links: [],
+        extraInfo: [
+            {
+                title: "Stack",
+                description: "Python Django, React, PostgreSQL",
+            },
+            {
+                title: "Data",
+                description: "2024-2025",
+            },
+            {
+                title: "Client",
+                description: "Itau Bank",
+            },
+        ],
+        content: `
+            <h3>Proactive Monitoring System – RPA Operations Dashboard</h3>
+            <p>
+                Built 4 real-time monitoring dashboards (React, Next.js, TypeScript, TailwindCSS) serving 120+ operations users, reducing incident response time by 35% through centralized KPI visibility.
+            </p>
+        `,
+    },
     {
         title: "FerRealSpanish",
         image: {
