@@ -1,11 +1,9 @@
 import { type FC } from "react";
 import * as S from "./styled";
-import { Button } from "@components/Button";
 import { Container } from "@components/Container";
 import { Socials } from "@components/Socials";
 import { PaineTowers } from "@static/images";
 
-import Resume from "@static/Resume_Renato_Lagos_FullStack_English.pdf";
 import { FadeIn } from "@utils/animations/FadeIn";
 
 export const Hero: FC = () => {
@@ -33,11 +31,6 @@ export const Hero: FC = () => {
                     </FadeIn>
                     <FadeIn delay={0.3}>
                         <Socials />
-                    </FadeIn>
-                    <FadeIn delay={0.4}>
-                        <Button link={Resume} target="_blank" align="center">
-                            Open Cv
-                        </Button>
                     </FadeIn>
                 </S.HeroContent>
             </Container>
