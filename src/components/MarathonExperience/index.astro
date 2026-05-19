@@ -1,0 +1,121 @@
+---
+interface Role {
+    role: string;
+    company: string;
+    period: string;
+    location: string;
+    description: string;
+    accent?: string;
+}
+
+const roles: Role[] = [
+    {
+        role: "Software Engineer (Full Stack)",
+        company: "ITAÚ BANK",
+        period: "08/2024 — 04/2025",
+        location: "Santiago, CL",
+        accent: "lime",
+        description: "Built 4 real-time monitoring dashboards (React, Next.js, TypeScript, TailwindCSS) serving 120+ ops users — cut incident response by 35%. Shipped 5 backend microservices (DRF, FastAPI, Node/Express) handling 2M+ daily requests with JWT auth + rate limiting. Migrated 3 monoliths to Docker + AWS API Gateway + ALB — deploys went from 2h to 15min.",
+    },
+    {
+        role: "Full Stack Developer",
+        company: "KPAZ",
+        period: "03/2023 — 07/2024",
+        location: "Santiago, CL",
+        accent: "teal",
+        description: "3 internal dashboards (React/Next/TS/Tailwind) consolidating 8+ REST services — 60% cut in manual reporting for a 30-person ops team. Webhook integration layer (FastAPI + Node/Express) connecting 5 internal systems, 500K+ events/mo at 99.8% uptime. Testing framework (pytest, Jest) at 75% coverage — 40% fewer prod bugs over 6 months.",
+    },
+    {
+        role: "Software Developer",
+        company: "EY CHILE",
+        period: "02/2022 — 03/2023",
+        location: "Santiago, CL",
+        accent: "cyan",
+        description: "Automation solutions (C#, SQL Server) and internal web tools (HTML/CSS/JS) for back-office operations at Big 4 consulting firm.",
+    },
+];
+---
+
+<section class="m-section m-tagged" data-tag="MOD::EXPERIENCE">
+    <div class="m-section-inner">
+        <div class="m-meta-strip">
+            <span>// SECTION · COMMERCIAL EXPERIENCE</span>
+            <span>ROLES::{roles.length}</span>
+            <span>FROM::2022</span>
+        </div>
+
+        <div class="m-section-header">
+            <h2 class="m-section-title">Experience / Timeline</h2>
+            <span class="m-mono" style="font-size: 10px;">ID::EXP-TIMELINE</span>
+        </div>
+
+        <ol class="m-exp-timeline">
+            {roles.map((r, i) => (
+                <li class={`m-panel m-panel-accent-${r.accent ?? "teal"} m-exp-item`}>
+                    <div class="m-panel-id">ROLE::{String(i + 1).padStart(2, "0")} / {r.company}</div>
+
+                    <div class="m-exp-header">
+                        <div class="m-exp-headline">
+                            <h3 class="m-display m-exp-role">{r.role}</h3>
+                            <div class="m-exp-company m-mono">@ {r.company}</div>
+                        </div>
+                        <div class="m-exp-meta">
+                            <div class="m-meta-strip">
+                                <span>{r.period}</span>
+                                <span>{r.location}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="m-body m-exp-desc">{r.description}</p>
+                </li>
+            ))}
+        </ol>
+    </div>
+</section>
+
+<style>
+    .m-exp-timeline {
+        display: flex;
+        flex-direction: column;
+        gap: var(--sp-3);
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .m-exp-item {
+        padding: var(--sp-5) var(--sp-6);
+        display: flex;
+        flex-direction: column;
+        gap: var(--sp-3);
+    }
+
+    .m-exp-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: var(--sp-4);
+        flex-wrap: wrap;
+    }
+
+    .m-exp-role {
+        font-size: 20px;
+        line-height: 1.15;
+    }
+
+    .m-exp-company {
+        font-size: 11px;
+        color: var(--accent-teal);
+        margin-top: 4px;
+    }
+
+    .m-exp-meta {
+        text-align: right;
+    }
+
+    .m-exp-desc {
+        font-size: 13px;
+        max-width: 90ch;
+    }
+</style>

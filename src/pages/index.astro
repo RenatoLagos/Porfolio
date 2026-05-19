@@ -1,23 +1,20 @@
 ---
-import { Hero } from "@modules/Hero";
 import Layout from "../layouts/Layout.astro";
-import { About } from "@modules/About";
-import { Projects } from "@modules/Projects";
-import { LogosSlider } from "@modules/LogosSlider";
-import { Contact } from "@modules/Contact";
-
-import { HomepageData } from "@modules/Projects/data/HomepageData";
+import MarathonHero from "@components/MarathonHero/index.astro";
+import MarathonAbout from "@components/MarathonAbout/index.astro";
+import MarathonProjects from "@components/MarathonProjects/index.astro";
+import MarathonContact from "@components/MarathonContact/index.astro";
 ---
 
 <Layout
-    title="Renato Lagos - Portfolio"
-    description="Renato Lagos is a full-stack developer from Moncton. I build web applications and websites for clients and myself."
+    title="Renato Lagos — Backend Engineer · Python · AI · LLM Agents"
+    description="Renato Lagos · Backend Engineer in Berlin. 4+ years of production Python (Django, FastAPI, PostgreSQL, AWS, Docker). AI-assisted development with Claude Code. Shipping multilingual Anthropic-powered agents for healthcare."
+    activePath="/"
 >
-    <main class="page-content">
-        <Hero client:load />
-        <LogosSlider client:visible />
-        <About client:visible />
-        <Projects data={HomepageData} client:visible />
-        <Contact client:visible />
+    <main>
+        <MarathonHero />
+        <MarathonAbout showExperience={false} />
+        <MarathonProjects title="Featured Work" limit={6} sectionId="MOD::PROJECTS·FEATURED" />
+        <MarathonContact />
     </main>
 </Layout>

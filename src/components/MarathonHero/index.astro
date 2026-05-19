@@ -1,0 +1,225 @@
+---
+interface Props {
+    name?: string;
+    role?: string;
+    location?: string;
+    yearsExperience?: number;
+    intro?: string;
+    photo?: string;
+}
+
+const {
+    name = "Renato Lagos",
+    role = "Backend Engineer · Python · AI · LLM Agents",
+    location = "Berlin · DE",
+    yearsExperience = 4,
+    intro = "Backend Software Engineer building production Python systems and AI-powered products. Django, FastAPI, PostgreSQL, AWS, Docker. Practicing AI-assisted development with Claude Code across the full SDLC — design, code, tests, reviews. Currently shipping multilingual Anthropic-powered agents for healthcare in Berlin.",
+    photo = "/profile-hero.jpeg",
+} = Astro.props;
+
+const today = new Date().toISOString().slice(0, 10);
+---
+
+<section class="m-section m-hero m-tagged" data-tag="ID::HERO-001">
+    <div class="m-section-inner">
+        <div class="m-meta-strip">
+            <span>// SECTION 01 · OVERVIEW</span>
+            <span>STATUS::ONLINE</span>
+            <span>LAST UPDATED · {today}</span>
+        </div>
+
+        <div class="m-hero-grid">
+            <div class="m-hero-content m-panel m-panel-accent-lime">
+                <div class="m-panel-id">ID::HERO-001 · PROFILE</div>
+
+                <p class="m-hero-pre m-mono">HI — IDENTIFY</p>
+                <h1 class="m-display m-hero-name">{name}</h1>
+                <h2 class="m-display m-hero-role">{role}</h2>
+
+                <p class="m-body m-hero-intro">{intro}</p>
+
+                <div class="m-hero-stats m-grid m-grid-auto">
+                    <div class="m-stat">
+                        <div class="m-stat-value m-lime">{yearsExperience}+</div>
+                        <div class="m-stat-label">YEARS XP</div>
+                    </div>
+                    <div class="m-stat">
+                        <div class="m-stat-value m-teal">PY</div>
+                        <div class="m-stat-label">PRIMARY STACK</div>
+                    </div>
+                    <div class="m-stat">
+                        <div class="m-stat-value m-magenta">AI</div>
+                        <div class="m-stat-label">LLM AGENTS</div>
+                    </div>
+                    <div class="m-stat">
+                        <div class="m-stat-value m-orange">DE</div>
+                        <div class="m-stat-label">BERLIN · EU</div>
+                    </div>
+                </div>
+
+                <div class="m-hero-actions">
+                    <a class="m-btn m-btn-primary" href="/projects">VIEW PROJECTS</a>
+                    <a class="m-btn" href="/contact">TRANSMIT::MSG</a>
+                </div>
+            </div>
+
+            <aside class="m-hero-side">
+                <div class="m-hero-photo m-tagged" data-tag="IMG::BERLIN-001">
+                    <img src={photo} alt={`${name} — Berlin`} width={600} height={800} loading="eager" />
+                </div>
+
+                <div class="m-meta-strip m-hero-side-meta">
+                    <span>LOC::{location}</span>
+                </div>
+
+                <div class="m-hero-socials">
+                    <a class="m-mono m-hero-social" href="https://github.com/RenatoLagos" target="_blank" rel="noopener noreferrer">
+                        <span>GH</span>
+                        <span>/RenatoLagos</span>
+                    </a>
+                    <a class="m-mono m-hero-social" href="https://www.linkedin.com/in/renato-lagos/" target="_blank" rel="noopener noreferrer">
+                        <span>LI</span>
+                        <span>/renato-lagos</span>
+                    </a>
+                    <a class="m-mono m-hero-social" href="mailto:renato.lagos.a@gmail.com">
+                        <span>EM</span>
+                        <span>renato.lagos.a@gmail.com</span>
+                    </a>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<style>
+    .m-hero {
+        padding-top: var(--sp-8);
+        padding-bottom: var(--sp-12);
+    }
+
+    .m-hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+        gap: var(--sp-5);
+        margin-top: var(--sp-4);
+    }
+
+    @media (max-width: 960px) {
+        .m-hero-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .m-hero-content {
+        padding: var(--sp-8);
+        display: flex;
+        flex-direction: column;
+        gap: var(--sp-4);
+    }
+
+    .m-hero-pre {
+        font-size: 11px;
+        color: var(--text-3);
+        margin-bottom: 0;
+    }
+
+    .m-hero-name {
+        font-size: 56px;
+        line-height: 1;
+    }
+
+    @media (max-width: 640px) {
+        .m-hero-name {
+            font-size: 40px;
+        }
+    }
+
+    .m-hero-role {
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--accent-teal);
+        letter-spacing: -0.01em;
+    }
+
+    .m-hero-intro {
+        max-width: 60ch;
+        margin-top: var(--sp-2);
+    }
+
+    .m-hero-stats {
+        margin-top: var(--sp-3);
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    @media (max-width: 640px) {
+        .m-hero-stats {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    .m-hero-actions {
+        display: flex;
+        gap: var(--sp-3);
+        margin-top: var(--sp-3);
+        flex-wrap: wrap;
+    }
+
+    .m-hero-side {
+        display: flex;
+        flex-direction: column;
+        gap: var(--sp-4);
+    }
+
+    .m-hero-photo {
+        position: relative;
+        background: var(--surface-0);
+        border: 1px solid var(--line-subtle);
+        border-radius: var(--r-md);
+        padding: var(--sp-3);
+        overflow: hidden;
+    }
+
+    .m-hero-photo img {
+        width: 100%;
+        height: auto;
+        display: block;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+        filter: contrast(1.04) saturate(0.92);
+    }
+
+    .m-hero-side-meta {
+        justify-content: flex-start;
+    }
+
+    .m-hero-socials {
+        display: flex;
+        flex-direction: column;
+        gap: var(--sp-2);
+        background: var(--surface-0);
+        border: 1px solid var(--line-subtle);
+        border-radius: var(--r-md);
+        padding: var(--sp-4);
+    }
+
+    .m-hero-social {
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        gap: var(--sp-2);
+        font-size: 11px;
+        color: var(--text-2);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        align-items: center;
+        transition: color var(--dur-fast) var(--ease-sharp);
+    }
+
+    .m-hero-social span:first-child {
+        color: var(--accent-teal);
+        font-weight: 600;
+    }
+
+    .m-hero-social:hover {
+        color: var(--text-0);
+    }
+</style>

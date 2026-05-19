@@ -1,0 +1,310 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+
+interface Props {
+    title?: string;
+    limit?: number;
+    showFilters?: boolean;
+    sectionId?: string;
+}
+
+const {
+    title = "Projects / Work",
+    limit,
+    showFilters = false,
+    sectionId = "MOD::PROJECTS",
+} = Astro.props;
+
+const all = await getCollection("projects", (entry: CollectionEntry<"projects">) => entry.data.show !== false);
+
+const sorted = all.sort((a, b) => {
+    if (a.data.order !== b.data.order) return a.data.order - b.data.order;
+    return b.data.date.getTime() - a.data.date.getTime();
+});
+
+const items = typeof limit === "number" ? sorted.slice(0, limit) : sorted;
+
+const allStacks = Array.from(
+    new Set(items.flatMap((p) => p.data.stack))
+).sort();
+
+const totalProjects = items.length;
+const lastUpdated = items.length > 0
+    ? items.map(p => p.data.date.getTime()).sort((a,b) => b - a)[0]
+    : Date.now();
+const lastUpdatedISO = new Date(lastUpdated).toISOString().slice(0, 10);
+---
+
+<section class="m-section m-projects m-tagged" data-tag={sectionId}>
+    <div class="m-section-inner">
+        <div class="m-meta-strip">
+            <span>// SECTION 03 · WORK</span>
+            <span>COUNT::{String(totalProjects).padStart(3, '0')}</span>
+            <span>LAST SYNC · {lastUpdatedISO}</span>
+            <span>SRC::GITHUB+LOCAL</span>
+        </div>
+
+        <div class="m-section-header">
+            <h2 class="m-section-title">{title}</h2>
+            <span class="m-mono" style="font-size: 10px;">ID::WRK-INDEX</span>
+        </div>
+
+        {showFilters && allStacks.length > 0 && (
+            <div class="m-projects-filters" data-filters>
+                <button class="m-filter active" data-filter="all">ALL</button>
+                {allStacks.map((stack) => (
+                    <button class="m-filter" data-filter={stack.toLowerCase()}>
+                        {stack}
+                    </button>
+                ))}
+            </div>
+        )}
+
+        {items.length === 0 && (
+            <div class="m-empty">
+                NO PROJECTS FOUND · ADD `portfolio.md` TO A REPO OR DROP A FILE IN `src/content/projects/`
+            </div>
+        )}
+
+        <div class="m-projects-grid" data-project-grid>
+            {items.map((entry) => {
+                const p = entry.data;
+                const accent = p.accent ?? "teal";
+                const linkEntries = Object.entries(p.links ?? {});
+                const stackKey = p.stack.map((s) => s.toLowerCase()).join("|");
+                return (
+                    <article
+                        class={`m-panel m-panel-accent-${accent} m-project-card`}
+                        data-stack={stackKey}
+                    >
+                        <div class="m-project-header">
+                            <div class="m-panel-id">ID::PRJ-{entry.id.toUpperCase().slice(0, 12)}</div>
+                            <span class={`m-badge m-badge-${accent}`}>{p.status.toUpperCase()}</span>
+                        </div>
+
+                        {p.cover && (
+                            <div class="m-project-cover">
+                                <img
+                                    src={p.cover}
+                                    alt={p.title}
+                                    loading="lazy"
+                                    width={600}
+                                    height={360}
+                                />
+                                <div class="m-project-cover-overlay">
+                                    <span class="m-mono">IMG::{entry.id.toUpperCase().slice(0, 8)}</span>
+                                </div>
+                            </div>
+                        )}
+
+                        <div class="m-project-body">
+                            <h3 class="m-display m-project-title">{p.title}</h3>
+                            <p class="m-body m-project-summary">{p.summary}</p>
+
+                            <div class="m-project-meta">
+                                <div class="m-project-meta-row">
+                                    <span class="m-label">CLIENT</span>
+                                    <span class="m-mono m-project-meta-val">{p.client}</span>
+                                </div>
+                                {p.role && (
+                                    <div class="m-project-meta-row">
+                                        <span class="m-label">ROLE</span>
+                                        <span class="m-mono m-project-meta-val">{p.role}</span>
+                                    </div>
+                                )}
+                                <div class="m-project-meta-row">
+                                    <span class="m-label">DATE</span>
+                                    <span class="m-mono m-project-meta-val">{p.date.toISOString().slice(0, 10)}</span>
+                                </div>
+                            </div>
+
+                            {p.stack.length > 0 && (
+                                <div class="m-project-stack">
+                                    <div class="m-label">STACK</div>
+                                    <div class="m-badge-row">
+                                        {p.stack.map((s, i) => {
+                                            const colors = ["teal", "cyan", "lime", "green", "magenta", "orange"];
+                                            const c = colors[i % colors.length];
+                                            return <span class={`m-badge m-badge-${c}`}>{s}</span>;
+                                        })}
+                                    </div>
+                                </div>
+                            )}
+
+                            {linkEntries.length > 0 && (
+                                <div class="m-project-actions">
+                                    {linkEntries.map(([key, url]) => {
+                                        const label = key.toUpperCase();
+                                        const primary = key === "live" || key === "demo";
+                                        return (
+                                            <a
+                                                class={primary ? "m-btn m-btn-primary m-btn-sm" : "m-btn m-btn-sm"}
+                                                href={url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                {label === "SOURCE" ? "VIEW SOURCE" : label === "LIVE" ? "OPEN LIVE" : label}
+                                                <span aria-hidden="true">↗</span>
+                                            </a>
+                                        );
+                                    })}
+                                </div>
+                            )}
+                        </div>
+                    </article>
+                );
+            })}
+        </div>
+    </div>
+</section>
+
+<style>
+    .m-projects-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--sp-2);
+        margin-bottom: var(--sp-5);
+    }
+
+    .m-projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+        gap: var(--sp-4);
+    }
+
+    @media (max-width: 640px) {
+        .m-projects-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .m-project-card {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        overflow: hidden;
+        transition:
+            border-color var(--dur-fast) var(--ease-sharp),
+            transform var(--dur-fast) var(--ease-sharp);
+    }
+
+    .m-project-card:hover {
+        transform: translateY(-2px);
+    }
+
+    .m-project-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--sp-3) var(--sp-4) var(--sp-2);
+        border-bottom: 1px solid var(--line-subtle);
+    }
+
+    .m-project-cover {
+        position: relative;
+        background: var(--surface-1);
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border-bottom: 1px solid var(--line-subtle);
+    }
+
+    .m-project-cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: contrast(1.08) saturate(0.92);
+        transition: transform var(--dur-slow) var(--ease-sharp);
+    }
+
+    .m-project-card:hover .m-project-cover img {
+        transform: scale(1.02);
+    }
+
+    .m-project-cover-overlay {
+        position: absolute;
+        bottom: 8px;
+        right: 12px;
+        font-size: 9px;
+        color: var(--text-3);
+        background: rgba(5, 6, 7, 0.7);
+        padding: 2px 6px;
+        border-radius: var(--r-sm);
+        backdrop-filter: blur(4px);
+    }
+
+    .m-project-body {
+        padding: var(--sp-4) var(--sp-5) var(--sp-5);
+        display: flex;
+        flex-direction: column;
+        gap: var(--sp-3);
+        flex: 1;
+    }
+
+    .m-project-title {
+        font-size: 20px;
+        line-height: 1.15;
+    }
+
+    .m-project-summary {
+        font-size: 13px;
+        color: var(--text-1);
+    }
+
+    .m-project-meta {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: var(--sp-2);
+        padding: var(--sp-3) 0;
+        border-top: 1px solid var(--line-subtle);
+        border-bottom: 1px solid var(--line-subtle);
+    }
+
+    .m-project-meta-row {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .m-project-meta-val {
+        font-size: 11px;
+        color: var(--text-1);
+    }
+
+    .m-project-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--sp-2);
+        margin-top: auto;
+    }
+
+    .m-project-card[hidden] {
+        display: none !important;
+    }
+</style>
+
+<script>
+    const grid = document.querySelector<HTMLDivElement>("[data-project-grid]");
+    const filterBar = document.querySelector<HTMLDivElement>("[data-filters]");
+    if (grid && filterBar) {
+        filterBar.addEventListener("click", (event) => {
+            const target = event.target;
+            if (!(target instanceof HTMLButtonElement)) return;
+            const filter = target.dataset.filter;
+            if (!filter) return;
+
+            filterBar
+                .querySelectorAll<HTMLButtonElement>(".m-filter")
+                .forEach((btn) => btn.classList.toggle("active", btn === target));
+
+            grid.querySelectorAll<HTMLElement>(".m-project-card").forEach((card) => {
+                if (filter === "all") {
+                    card.hidden = false;
+                    return;
+                }
+                const stack = card.dataset.stack ?? "";
+                card.hidden = !stack.includes(filter);
+            });
+        });
+    }
+</script>

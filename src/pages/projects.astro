@@ -1,14 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Projects as ProjectsModule } from "@modules/Projects";
-import { ProjectsData } from "@modules/Projects/data/ProjectsData";
+import MarathonProjects from "@components/MarathonProjects/index.astro";
 ---
 
 <Layout
-    title="Projects"
-    description="A collection of projects I've worked on, ranging from open-source contributions to personal projects and client work."
+    title="Projects — Renato Lagos"
+    description="Open-source projects, personal work, and selected client engagements. Auto-synced from GitHub repos via Astro 5 Content Layer."
+    activePath="/projects"
 >
-    <main class="page-content">
-        <ProjectsModule data={ProjectsData} client:load />
+    <main>
+        <MarathonProjects
+            title="All Projects / Index"
+            showFilters={true}
+            sectionId="MOD::PROJECTS·INDEX"
+        />
     </main>
 </Layout>

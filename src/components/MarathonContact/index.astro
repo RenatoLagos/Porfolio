@@ -1,0 +1,171 @@
+---
+const phone = "+49 1521 2917347";
+const phoneHref = "tel:+4915212917347";
+const email = "renato.lagos.a@gmail.com";
+const emailHref = `mailto:${email}`;
+const location = "Berlin, Germany";
+---
+
+<section class="m-section m-tagged" data-tag="MOD::CONTACT">
+    <div class="m-section-inner">
+        <div class="m-meta-strip">
+            <span>// SECTION 04 · TRANSMIT</span>
+            <span>STATUS::ACCEPTING</span>
+            <span>RESPONSE::&lt;24H</span>
+        </div>
+
+        <div class="m-section-header">
+            <h2 class="m-section-title">Contact / Open Channels</h2>
+            <span class="m-mono" style="font-size: 10px;">ID::CON-001</span>
+        </div>
+
+        <div class="m-contact-grid">
+            <div class="m-panel m-panel-accent-teal m-contact-channels">
+                <div class="m-panel-id">CHANNELS::DIRECT</div>
+
+                <a class="m-contact-channel" href={emailHref}>
+                    <div class="m-contact-channel-label">
+                        <span class="m-mono">CH::01</span>
+                        <span class="m-mono m-teal">EMAIL</span>
+                    </div>
+                    <div class="m-contact-channel-value m-display">{email}</div>
+                    <div class="m-mono m-contact-channel-meta">PRIMARY · BEST FOR WORK INQUIRIES</div>
+                </a>
+
+                <hr class="m-divider" />
+
+                <a class="m-contact-channel" href={phoneHref}>
+                    <div class="m-contact-channel-label">
+                        <span class="m-mono">CH::02</span>
+                        <span class="m-mono m-cyan">PHONE</span>
+                    </div>
+                    <div class="m-contact-channel-value m-display">{phone}</div>
+                    <div class="m-mono m-contact-channel-meta">CET TIMEZONE · TEXT FIRST</div>
+                </a>
+
+                <hr class="m-divider" />
+
+                <div class="m-contact-channel">
+                    <div class="m-contact-channel-label">
+                        <span class="m-mono">CH::03</span>
+                        <span class="m-mono m-orange">LOCATION</span>
+                    </div>
+                    <div class="m-contact-channel-value m-display">{location}</div>
+                    <div class="m-mono m-contact-channel-meta">CURRENTLY · REMOTE / HYBRID ROLES</div>
+                </div>
+            </div>
+
+            <form class="m-panel m-contact-form" action={emailHref} method="get" data-contact-form>
+                <div class="m-panel-id">FORM::TRANSMIT</div>
+                <p class="m-meta-strip" style="padding: 0; margin-bottom: var(--sp-3);">
+                    <span>// QUICK MESSAGE — OPENS YOUR MAIL CLIENT</span>
+                </p>
+
+                <div class="m-form-row">
+                    <label class="m-label" for="contact-subject">SUBJECT</label>
+                    <input
+                        class="m-input"
+                        type="text"
+                        id="contact-subject"
+                        name="subject"
+                        placeholder="Project inquiry / Hiring / Hello"
+                        required
+                    />
+                </div>
+
+                <div class="m-form-row">
+                    <label class="m-label" for="contact-body">MESSAGE</label>
+                    <textarea
+                        class="m-textarea"
+                        id="contact-body"
+                        name="body"
+                        rows="6"
+                        placeholder="What are you working on? What problem are you trying to solve?"
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="m-form-actions">
+                    <button class="m-btn m-btn-primary" type="submit">TRANSMIT::MSG ↗</button>
+                    <span class="m-mono" style="font-size: 10px;">ENC::PLAINTEXT</span>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<style>
+    .m-contact-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+        gap: var(--sp-5);
+    }
+    @media (max-width: 960px) {
+        .m-contact-grid { grid-template-columns: 1fr; }
+    }
+
+    .m-contact-channels {
+        padding: var(--sp-5) var(--sp-6);
+    }
+
+    .m-contact-channel {
+        display: block;
+        padding: var(--sp-3) 0;
+        color: inherit;
+        transition: opacity var(--dur-fast) var(--ease-sharp);
+    }
+    a.m-contact-channel:hover {
+        opacity: 0.85;
+    }
+
+    .m-contact-channel-label {
+        display: flex;
+        gap: var(--sp-3);
+        font-size: 10px;
+        color: var(--text-3);
+        margin-bottom: var(--sp-2);
+    }
+
+    .m-contact-channel-value {
+        font-size: 22px;
+        word-break: break-word;
+        line-height: 1.1;
+    }
+
+    .m-contact-channel-meta {
+        font-size: 10px;
+        color: var(--text-3);
+        margin-top: var(--sp-2);
+    }
+
+    .m-contact-form {
+        padding: var(--sp-5) var(--sp-6);
+        display: flex;
+        flex-direction: column;
+        gap: var(--sp-3);
+    }
+
+    .m-form-row { display: flex; flex-direction: column; gap: var(--sp-2); }
+
+    .m-form-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--sp-3);
+        margin-top: var(--sp-2);
+    }
+</style>
+
+<script>
+    const form = document.querySelector<HTMLFormElement>("[data-contact-form]");
+    if (form) {
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const subjectEl = form.querySelector<HTMLInputElement>('input[name="subject"]');
+            const bodyEl = form.querySelector<HTMLTextAreaElement>('textarea[name="body"]');
+            const subject = encodeURIComponent(subjectEl?.value ?? "");
+            const body = encodeURIComponent(bodyEl?.value ?? "");
+            window.location.href = `mailto:renato.lagos.a@gmail.com?subject=${subject}&body=${body}`;
+        });
+    }
+</script>

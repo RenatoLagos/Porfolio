@@ -1,0 +1,192 @@
+---
+type Tier = "senior" | "mid" | "junior" | "native" | "b2" | "a1";
+
+interface Skill {
+    name: string;
+    years?: string;
+    tier: Tier;
+}
+
+interface Group {
+    title: string;
+    code: string;
+    skills: Skill[];
+}
+
+const groups: Group[] = [
+    {
+        title: "Programming Languages",
+        code: "LANG",
+        skills: [
+            { name: "TypeScript", years: "3y", tier: "senior" },
+            { name: "JavaScript", years: "3y", tier: "senior" },
+            { name: "Python",     years: "4y", tier: "senior" },
+            { name: "C#",         years: "2y", tier: "mid" },
+            { name: "PowerShell", years: "1y", tier: "junior" },
+        ],
+    },
+    {
+        title: "Frontend",
+        code: "FE",
+        skills: [
+            { name: "React",        years: "3y", tier: "senior" },
+            { name: "Next.js",      years: "2y", tier: "mid" },
+            { name: "Astro",        years: "1y", tier: "mid" },
+            { name: "TailwindCSS",  years: "3y", tier: "senior" },
+        ],
+    },
+    {
+        title: "Backend",
+        code: "BE",
+        skills: [
+            { name: "Django",     years: "3y", tier: "senior" },
+            { name: "DRF",        years: "3y", tier: "senior" },
+            { name: "FastAPI",    years: "2y", tier: "mid" },
+            { name: "Node.js",    years: "2y", tier: "mid" },
+        ],
+    },
+    {
+        title: "Databases",
+        code: "DB",
+        skills: [
+            { name: "PostgreSQL", years: "3y", tier: "senior" },
+            { name: "MySQL",      years: "2y", tier: "mid" },
+            { name: "SQL Server", years: "2y", tier: "mid" },
+            { name: "Supabase",   years: "1y", tier: "mid" },
+        ],
+    },
+    {
+        title: "Orchestration & Automation",
+        code: "ORCH",
+        skills: [
+            { name: "Apache Airflow", years: "1y", tier: "mid" },
+            { name: "FastAPI Webhooks", years: "2y", tier: "mid" },
+            { name: "Python Scripting", years: "4y", tier: "senior" },
+        ],
+    },
+    {
+        title: "Data Processing",
+        code: "DATA",
+        skills: [
+            { name: "pandas",  years: "3y", tier: "mid" },
+            { name: "NumPy",   years: "3y", tier: "mid" },
+            { name: "ETL",     years: "3y", tier: "senior" },
+        ],
+    },
+    {
+        title: "Cloud & DevOps",
+        code: "CLOUD",
+        skills: [
+            { name: "AWS",            years: "2y", tier: "mid" },
+            { name: "Docker",         years: "2y", tier: "mid" },
+            { name: "GitHub Actions", years: "2y", tier: "mid" },
+            { name: "Linux",          years: "3y", tier: "senior" },
+        ],
+    },
+    {
+        title: "API & Authentication",
+        code: "API",
+        skills: [
+            { name: "REST",          years: "3y", tier: "senior" },
+            { name: "JWT",           years: "2y", tier: "mid" },
+            { name: "OAuth",         years: "2y", tier: "mid" },
+            { name: "OpenAPI",       years: "2y", tier: "mid" },
+        ],
+    },
+    {
+        title: "Languages",
+        code: "LANG",
+        skills: [
+            { name: "Spanish", years: "Native",       tier: "native" },
+            { name: "English", years: "Professional", tier: "b2" },
+            { name: "German",  years: "Elementary",   tier: "a1" },
+        ],
+    },
+];
+
+const tierAccent: Record<Tier, string> = {
+    senior: "lime",
+    mid: "teal",
+    junior: "cyan",
+    native: "green",
+    b2: "teal",
+    a1: "orange",
+};
+---
+
+<section class="m-section m-tagged" data-tag="MOD::SKILLS">
+    <div class="m-section-inner">
+        <div class="m-meta-strip">
+            <span>// SECTION · TECHNICAL SKILLS</span>
+            <span>GROUPS::{groups.length}</span>
+        </div>
+
+        <div class="m-section-header">
+            <h2 class="m-section-title">Skills / Capability Matrix</h2>
+            <span class="m-mono" style="font-size: 10px;">ID::SKL-MATRIX</span>
+        </div>
+
+        <div class="m-skills-groups">
+            {groups.map((g) => (
+                <div class="m-panel m-skills-group">
+                    <div class="m-panel-id">GRP::{g.code}</div>
+                    <h3 class="m-display m-skills-group-title">{g.title}</h3>
+                    <div class="m-skills-rows">
+                        {g.skills.map((s) => (
+                            <div class="m-skills-row">
+                                <span class="m-skills-name">{s.name}</span>
+                                <span class={`m-badge m-badge-${tierAccent[s.tier]}`}>{s.years}</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .m-skills-groups {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: var(--sp-4);
+    }
+
+    .m-skills-group {
+        padding: var(--sp-5);
+        display: flex;
+        flex-direction: column;
+        gap: var(--sp-3);
+    }
+
+    .m-skills-group-title {
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        color: var(--text-0);
+    }
+
+    .m-skills-rows {
+        display: flex;
+        flex-direction: column;
+        gap: var(--sp-2);
+    }
+
+    .m-skills-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--sp-2) 0;
+        border-bottom: 1px solid var(--line-subtle);
+    }
+
+    .m-skills-row:last-child { border-bottom: none; }
+
+    .m-skills-name {
+        font-family: var(--font-mono);
+        font-size: 12px;
+        color: var(--text-1);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+    }
+</style>

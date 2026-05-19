@@ -1,0 +1,115 @@
+---
+interface Props {
+    activePath?: string;
+}
+
+const { activePath = "/" } = Astro.props;
+
+const links = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/projects", label: "Work" },
+    { href: "/contact", label: "Contact" },
+];
+
+const isActive = (href: string) =>
+    href === "/" ? activePath === "/" : activePath.startsWith(href);
+---
+
+<nav class="m-nav" aria-label="Primary">
+    <a href="/" class="m-nav-title">RENATO LAGOS</a>
+
+    <button
+        class="m-nav-toggle"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        data-nav-toggle
+    >
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="m-nav-links" data-nav-links>
+        {
+            links.map((link) => (
+                <a
+                    href={link.href}
+                    class={isActive(link.href) ? "active" : ""}
+                >
+                    {link.label}
+                </a>
+            ))
+        }
+    </div>
+</nav>
+
+<style>
+    .m-nav-toggle {
+        display: none;
+        width: 28px;
+        height: 28px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        background: transparent;
+        border: 1px solid var(--line-strong);
+        border-radius: var(--r-sm);
+        cursor: pointer;
+        padding: 0;
+    }
+    .m-nav-toggle span {
+        display: block;
+        width: 14px;
+        height: 1px;
+        background: var(--text-1);
+        transition: transform var(--dur-fast) var(--ease-sharp);
+    }
+    .m-nav-toggle[aria-expanded="true"] span:nth-child(1) {
+        transform: translateY(3px) rotate(45deg);
+    }
+    .m-nav-toggle[aria-expanded="true"] span:nth-child(2) {
+        transform: translateY(-3px) rotate(-45deg);
+    }
+
+    @media (max-width: 720px) {
+        .m-nav-toggle {
+            display: inline-flex;
+        }
+        .m-nav-links {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--surface-0);
+            border-bottom: 1px solid var(--line-strong);
+            flex-direction: column;
+            align-items: flex-start;
+            padding: var(--sp-4) var(--sp-6);
+            gap: var(--sp-3);
+            transform: translateY(-12px);
+            opacity: 0;
+            pointer-events: none;
+            transition:
+                opacity var(--dur-med) var(--ease-sharp),
+                transform var(--dur-med) var(--ease-sharp);
+        }
+        .m-nav-links.open {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+</style>
+
+<script>
+    const toggle = document.querySelector<HTMLButtonElement>("[data-nav-toggle]");
+    const links = document.querySelector<HTMLDivElement>("[data-nav-links]");
+
+    if (toggle && links) {
+        toggle.addEventListener("click", () => {
+            const open = links.classList.toggle("open");
+            toggle.setAttribute("aria-expanded", String(open));
+        });
+    }
+</script>

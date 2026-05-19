@@ -1,0 +1,53 @@
+:root {
+  --font-ui: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+
+  --bg-0: #050607;
+  --bg-1: #0a0d0f;
+  --bg-2: #101417;
+  --surface-0: #0d1114;
+  --surface-1: #13191d;
+  --surface-2: #182126;
+  --surface-3: #1e2a30;
+
+  --text-0: #f3f7f6;
+  --text-1: #c8d2cf;
+  --text-2: #8b9795;
+  --text-3: #64706d;
+
+  --line-subtle: rgba(207, 255, 240, 0.08);
+  --line-strong: rgba(207, 255, 240, 0.22);
+
+  --accent-lime: #d7ff3f;
+  --accent-green: #7bff6a;
+  --accent-teal: #00f0c8;
+  --accent-cyan: #49d8ff;
+  --accent-magenta: #ff4fd8;
+  --accent-red: #ff5a5a;
+  --accent-orange: #ff8a3d;
+
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+
+  --r-sm: 2px;
+  --r-md: 4px;
+  --r-lg: 6px;
+
+  --ease-sharp: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --dur-fast: 120ms;
+  --dur-med: 200ms;
+  --dur-slow: 320ms;
+
+  --grid-size: 40px;
+  --container-max: 1280px;
+  --container-padding: 24px;
+}

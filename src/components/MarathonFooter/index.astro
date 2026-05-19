@@ -1,0 +1,65 @@
+---
+const year = new Date().getFullYear();
+const buildId = (new Date().toISOString().slice(0, 10)).replace(/-/g, "");
+---
+
+<footer class="m-footer m-tagged" data-tag="SYS::FOOT">
+    <div class="m-footer-inner">
+        <div class="m-meta-strip">
+            <span>// RENATO LAGOS</span>
+            <span>BERLIN · DE</span>
+            <span>© {year}</span>
+            <span>BUILD::{buildId}</span>
+        </div>
+        <div class="m-footer-links">
+            <a
+                class="m-mono m-footer-link"
+                href="https://github.com/RenatoLagos"
+                target="_blank"
+                rel="noopener noreferrer"
+            >GITHUB</a>
+            <a
+                class="m-mono m-footer-link"
+                href="https://www.linkedin.com/in/renato-lagos/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >LINKEDIN</a>
+            <a
+                class="m-mono m-footer-link"
+                href="mailto:renato.lagos.a@gmail.com"
+            >EMAIL</a>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .m-footer {
+        position: relative;
+        background: var(--surface-0);
+        border-top: 1px solid var(--line-strong);
+        padding: var(--sp-6) 0;
+        margin-top: var(--sp-16);
+    }
+    .m-footer-inner {
+        max-width: var(--container-max);
+        margin: 0 auto;
+        padding: 0 var(--container-padding);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--sp-4);
+        flex-wrap: wrap;
+    }
+    .m-footer-links {
+        display: flex;
+        gap: var(--sp-4);
+    }
+    .m-footer-link {
+        font-size: 11px;
+        color: var(--text-3);
+        transition: color var(--dur-fast) var(--ease-sharp);
+    }
+    .m-footer-link:hover {
+        color: var(--accent-teal);
+    }
+</style>

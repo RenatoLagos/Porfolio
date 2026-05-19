@@ -1,0 +1,164 @@
+---
+interface SkillBlock {
+    title: string;
+    body: string;
+}
+
+interface CommercialXP {
+    name: string;
+    years: number;
+    tier: "senior" | "mid" | "junior";
+}
+
+interface Props {
+    showExperience?: boolean;
+}
+
+const { showExperience = true } = Astro.props;
+
+const intro = "Backend Software Engineer based in Berlin, Germany with 4+ years building production Python systems and AI-powered products. Core stack: Django, FastAPI, PostgreSQL, AWS, Docker. I practice AI-assisted development with Claude Code across the full SDLC — design, code, tests, and reviews. Currently shipping multilingual Anthropic-powered agents for healthcare in Berlin. Work authorization in Germany.";
+
+const skills: SkillBlock[] = [
+    {
+        title: "Backend Engineering",
+        body: "Production Python services with Django REST Framework, FastAPI, Node.js/Express. PostgreSQL schemas for high-throughput workloads, async pipelines with Celery + Redis, event-driven automation handling 500K+ events/month.",
+    },
+    {
+        title: "AI Engineering & LLM Agents",
+        body: "Anthropic + OpenAI integration, prompt engineering for human-tone multilingual conversations, Claude Code / Claude Skills / Deep Agents in the SDLC. LangSmith and Harness AI Agents for evaluation and orchestration.",
+    },
+    {
+        title: "Cloud, APIs & DevOps",
+        body: "Dockerized services on AWS (API Gateway, EC2, ALB) with GitHub Actions CI/CD — 85% faster deploys. REST + OpenAPI / Swagger contracts, integration testing, secure auth and rate limiting.",
+    },
+    {
+        title: "Data & Orchestration",
+        body: "PostgreSQL, MySQL, Supabase. Apache Airflow + FastAPI webhook pipelines for idempotent automation, pytest + Jest practices reaching 80%+ coverage, OpenAPI documentation for cross-team integrations.",
+    },
+];
+
+const commercialXP: CommercialXP[] = [
+    { name: "Python",     years: 4, tier: "senior" },
+    { name: "TypeScript", years: 3, tier: "senior" },
+    { name: "React",      years: 3, tier: "senior" },
+    { name: "Django",     years: 3, tier: "senior" },
+    { name: "Next.js",    years: 2, tier: "mid" },
+    { name: "FastAPI",    years: 2, tier: "mid" },
+    { name: "AWS",        years: 2, tier: "mid" },
+    { name: "PostgreSQL", years: 4, tier: "senior" },
+    { name: "Airflow",    years: 2, tier: "mid" },
+    { name: "Docker",     years: 3, tier: "senior" },
+];
+
+const tierAccent: Record<CommercialXP["tier"], string> = {
+    senior: "lime",
+    mid: "teal",
+    junior: "cyan",
+};
+
+const skillBadges = [
+    "Python", "TypeScript", "JavaScript", "SQL",
+    "Django", "DRF", "FastAPI", "Node.js / Express",
+    "Claude Code", "Claude Skills", "Deep Agents", "LangSmith",
+    "Harness AI Agents", "Anthropic API", "OpenAI API", "LLM Integration",
+    "PostgreSQL", "MySQL", "Supabase",
+    "Docker", "AWS", "GitHub Actions", "CI/CD", "Linux",
+    "Apache Airflow", "Celery", "Redis",
+    "pytest", "Jest", "OpenAPI / Swagger",
+];
+---
+
+<section class="m-section m-tagged" data-tag="MOD::ABOUT">
+    <div class="m-section-inner">
+        <div class="m-meta-strip">
+            <span>// SECTION 02 · OPERATOR</span>
+            <span>ROLE::BACKEND · AI</span>
+            <span>EXPERIENCE::4Y+</span>
+            <span>AUTH::DE</span>
+        </div>
+
+        <div class="m-section-header">
+            <h2 class="m-section-title">About / Operator Profile</h2>
+            <span class="m-mono" style="font-size: 10px;">ID::ABT-001</span>
+        </div>
+
+        <div class="m-about-grid">
+            <div class="m-panel m-panel-accent-lime m-about-intro">
+                <div class="m-panel-id">PROFILE::PRIMARY</div>
+                <p class="m-body">{intro}</p>
+
+                <div class="m-about-skill-cluster">
+                    <div class="m-label">CORE STACK</div>
+                    <div class="m-badge-row">
+                        {skillBadges.map((s, i) => {
+                            const accents = ["teal", "cyan", "lime", "green", "magenta", "orange"];
+                            const c = accents[i % accents.length];
+                            return <span class={`m-badge m-badge-${c}`}>{s}</span>;
+                        })}
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-grid m-grid-2 m-about-skills">
+                {skills.map((s, i) => (
+                    <div class="m-panel" data-tag={`MOD::SKILL-${String(i+1).padStart(2,'0')}`}>
+                        <div class="m-panel-id">SKILL::{String(i+1).padStart(2,'0')}</div>
+                        <h3 class="m-display" style="font-size: 16px; margin-bottom: var(--sp-2);">{s.title}</h3>
+                        <p class="m-body" style="font-size: 13px;">{s.body}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        {showExperience && (
+            <div class="m-about-experience">
+                <div class="m-section-header" style="margin-top: var(--sp-8);">
+                    <h2 class="m-section-title">Commercial Experience / Years per Stack</h2>
+                    <span class="m-mono" style="font-size: 10px;">ID::ABT-002</span>
+                </div>
+
+                <div class="m-grid m-grid-auto">
+                    {commercialXP.map((xp) => (
+                        <div class="m-stat">
+                            <div class={`m-stat-value m-${tierAccent[xp.tier]}`}>{xp.years}Y</div>
+                            <div class="m-stat-label">{xp.name} · {xp.tier.toUpperCase()}</div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        )}
+    </div>
+</section>
+
+<style>
+    .m-about-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.7fr);
+        gap: var(--sp-5);
+    }
+
+    @media (max-width: 960px) {
+        .m-about-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .m-about-intro {
+        padding: var(--sp-6);
+        display: flex;
+        flex-direction: column;
+        gap: var(--sp-4);
+    }
+
+    .m-about-skill-cluster {
+        margin-top: var(--sp-2);
+    }
+
+    .m-about-skills {
+        align-content: start;
+    }
+
+    .m-about-experience {
+        margin-top: var(--sp-4);
+    }
+</style>

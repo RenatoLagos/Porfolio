@@ -1,13 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Contact as ContactModule } from "@modules/Contact";
+import MarathonContact from "@components/MarathonContact/index.astro";
 ---
 
 <Layout
-    title="Contact"
-    description="Contact me for any questions or inquiries.  I'm always open to new opportunities and collaborations."
+    title="Contact — Renato Lagos"
+    description="Open to senior backend / AI engineer roles in EU tech. Get in touch for opportunities, collaborations, or questions."
+    activePath="/contact"
 >
-    <main class="page-content">
-        <ContactModule client:load />
+    <main>
+        <MarathonContact />
     </main>
 </Layout>
